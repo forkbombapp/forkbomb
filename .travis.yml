@@ -1,9 +1,10 @@
 language: ruby
 rvm:
-  - 2.0.0
-after_success:
-  - git config --global user.email "builds@travis-ci.com"
-  - git config --global user.name "Travis CI"
-  - export GIT_TAG=CURRENT
-  - git tag -f $GIT_TAG -a -m "Generated tag from TravisCI build $TRAVIS_BUILD_NUMBER"
-  - git push origin $GIT_TAG --force
+- 2.0.0
+after_success: 
+- '[ "$TRAVIS_BRANCH" == "master" ] && curl -v -X DELETE -u $GITHUB_USER:$GITHUB_PASSWORD "https://api.github.com/repos/$TRAVIS_REPO_SLUG/git/refs/tags/CURRENT"'
+- '[ "$TRAVIS_BRANCH" == "master" ] && curl -v -X POST -d ''{"ref": "refs/tags/CURRENT","sha": "$TRAVIS_COMMIT"}'' --header "Content-Type:application/json" -u $GITHUB_USER:$GITHUB_PASSWORD "https://api.github.com/repos/$TRAVIS_REPO_SLUG/git/refs"'
+env:
+  global:
+  - secure: KXYMCHWpbkfdIo25rfsq4DFyqBbSFaSXW1DYSpWhYA0rGxjZVdQ2l+1y0yqP9HCf1wrjYTJZfb5c35khKBBWPFzRas3HAqh6LGx/TynbVV7SjyiR2gmM1q3WBUiH2qCqJUoGgnY+0RCpPwKuYJNBHfcsZ7mBbnUOepcbkSqNl6U=
+  - secure: RvFgRVnmls0mJx/szHgroW2W9nmXGPTl8U6D6GA9lqNh+dmXYkFLY+WlZT3hnW5twrAw+mJgoLBJBXPVWDluFVrVClIdePk4bXfJOE3+lfvSVAYlntLXBJAeQGgmII5VLmBfzXApXK9OugCdADvmqj7K9BWZGvx67VTD+bZtp8U=
