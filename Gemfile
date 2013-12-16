@@ -35,6 +35,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development do
+  gem 'travis'
+end
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'cucumber-rails', require: false
