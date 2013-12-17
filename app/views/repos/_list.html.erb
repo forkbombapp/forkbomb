@@ -5,7 +5,7 @@
 <% else %>
   <ul class="<%= user.login %>">
   <% repos.each do |repo| %>
-    <li><%= repo.name  %></li>
+    <li><%= repo.repo_name  %></li>
   <% end %>
   </ul>
 <% end %>

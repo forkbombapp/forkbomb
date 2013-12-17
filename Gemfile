@@ -53,6 +53,7 @@ group :test do
   gem 'guard'
   gem 'guard-rspec', require: false
   gem 'guard-cucumber'
+  gem 'timecop'
 end
 
 gem 'devise'
