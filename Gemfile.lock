@@ -291,7 +291,7 @@ DEPENDENCIES
   database_cleaner
   devise
   dotenv-rails
-  github_api
+  github_api (~> 0.11)
   guard
   guard-cucumber
   guard-rspec

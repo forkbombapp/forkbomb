@@ -1,0 +1,432 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/repos/Floppy/such-travis/pulls?access_token=<FORKBOMB_GITHUB_OAUTH_TOKEN>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json,application/vnd.github.beta+json;q=0.5,application/json;q=0.1
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - Github Ruby Gem 0.11.1
+      Authorization:
+      - Token token="<FORKBOMB_GITHUB_OAUTH_TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Tue, 17 Dec 2013 15:17:38 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4889'
+      X-Ratelimit-Reset:
+      - '1387294863'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Etag:
+      - '"bea361185c3b3991c0c6fb944373225e"'
+      X-Oauth-Scopes:
+      - user, public_repo, repo, gist
+      X-Accepted-Oauth-Scopes:
+      - repo, repo:status, repo:deployment, public_repo, delete_repo, user, user:email,
+        user:follow, admin:org, write:org, read:org, gist, site_admin, user:assets,
+        user:assets:read
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '2'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - '*'
+      X-Github-Request-Id:
+      - 569C372E:2C4D:8894640:52B06B12
+    body:
+      encoding: UTF-8
+      string: '[]'
+    http_version: 
+  recorded_at: Tue, 17 Dec 2013 15:17:38 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/Floppy/such-travis?access_token=<FORKBOMB_GITHUB_OAUTH_TOKEN>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json,application/vnd.github.beta+json;q=0.5,application/json;q=0.1
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - Github Ruby Gem 0.11.1
+      Authorization:
+      - Token token="<FORKBOMB_GITHUB_OAUTH_TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Tue, 17 Dec 2013 15:17:39 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4888'
+      X-Ratelimit-Reset:
+      - '1387294863'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Last-Modified:
+      - Tue, 17 Dec 2013 11:52:21 GMT
+      Etag:
+      - '"d4e110d9a76271d5f731fd45efbb81fa"'
+      X-Oauth-Scopes:
+      - user, public_repo, repo, gist
+      X-Accepted-Oauth-Scopes:
+      - repo, repo:status, repo:deployment, public_repo, delete_repo, user, user:email,
+        user:follow, admin:org, write:org, read:org, gist, site_admin, user:assets,
+        user:assets:read
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - '*'
+      X-Github-Request-Id:
+      - 569C372E:2C50:76E58FB:52B06B13
+    body:
+      encoding: UTF-8
+      string: '{"id":15253182,"name":"such-travis","full_name":"Floppy/such-travis","owner":{"login":"Floppy","id":3565,"avatar_url":"https://gravatar.com/avatar/c150a49c7709fa40bffca545ecf8942d?d=https%3A%2F%2Fidenticons.github.com%2Fe6e713296627dff6475085cc6a224464.png&r=x","gravatar_id":"c150a49c7709fa40bffca545ecf8942d","url":"https://api.github.com/users/Floppy","html_url":"https://github.com/Floppy","followers_url":"https://api.github.com/users/Floppy/followers","following_url":"https://api.github.com/users/Floppy/following{/other_user}","gists_url":"https://api.github.com/users/Floppy/gists{/gist_id}","starred_url":"https://api.github.com/users/Floppy/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/Floppy/subscriptions","organizations_url":"https://api.github.com/users/Floppy/orgs","repos_url":"https://api.github.com/users/Floppy/repos","events_url":"https://api.github.com/users/Floppy/events{/privacy}","received_events_url":"https://api.github.com/users/Floppy/received_events","type":"User","site_admin":false},"private":false,"html_url":"https://github.com/Floppy/such-travis","description":"","fork":true,"url":"https://api.github.com/repos/Floppy/such-travis","forks_url":"https://api.github.com/repos/Floppy/such-travis/forks","keys_url":"https://api.github.com/repos/Floppy/such-travis/keys{/key_id}","collaborators_url":"https://api.github.com/repos/Floppy/such-travis/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/Floppy/such-travis/teams","hooks_url":"https://api.github.com/repos/Floppy/such-travis/hooks","issue_events_url":"https://api.github.com/repos/Floppy/such-travis/issues/events{/number}","events_url":"https://api.github.com/repos/Floppy/such-travis/events","assignees_url":"https://api.github.com/repos/Floppy/such-travis/assignees{/user}","branches_url":"https://api.github.com/repos/Floppy/such-travis/branches{/branch}","tags_url":"https://api.github.com/repos/Floppy/such-travis/tags","blobs_url":"https://api.github.com/repos/Floppy/such-travis/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/Floppy/such-travis/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/Floppy/such-travis/git/refs{/sha}","trees_url":"https://api.github.com/repos/Floppy/such-travis/git/trees{/sha}","statuses_url":"https://api.github.com/repos/Floppy/such-travis/statuses/{sha}","languages_url":"https://api.github.com/repos/Floppy/such-travis/languages","stargazers_url":"https://api.github.com/repos/Floppy/such-travis/stargazers","contributors_url":"https://api.github.com/repos/Floppy/such-travis/contributors","subscribers_url":"https://api.github.com/repos/Floppy/such-travis/subscribers","subscription_url":"https://api.github.com/repos/Floppy/such-travis/subscription","commits_url":"https://api.github.com/repos/Floppy/such-travis/commits{/sha}","git_commits_url":"https://api.github.com/repos/Floppy/such-travis/git/commits{/sha}","comments_url":"https://api.github.com/repos/Floppy/such-travis/comments{/number}","issue_comment_url":"https://api.github.com/repos/Floppy/such-travis/issues/comments/{number}","contents_url":"https://api.github.com/repos/Floppy/such-travis/contents/{+path}","compare_url":"https://api.github.com/repos/Floppy/such-travis/compare/{base}...{head}","merges_url":"https://api.github.com/repos/Floppy/such-travis/merges","archive_url":"https://api.github.com/repos/Floppy/such-travis/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/Floppy/such-travis/downloads","issues_url":"https://api.github.com/repos/Floppy/such-travis/issues{/number}","pulls_url":"https://api.github.com/repos/Floppy/such-travis/pulls{/number}","milestones_url":"https://api.github.com/repos/Floppy/such-travis/milestones{/number}","notifications_url":"https://api.github.com/repos/Floppy/such-travis/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/Floppy/such-travis/labels{/name}","releases_url":"https://api.github.com/repos/Floppy/such-travis/releases{/id}","created_at":"2013-12-17T11:52:20Z","updated_at":"2013-12-17T11:52:21Z","pushed_at":"2013-12-17T11:45:57Z","git_url":"git://github.com/Floppy/such-travis.git","ssh_url":"git@github.com:Floppy/such-travis.git","clone_url":"https://github.com/Floppy/such-travis.git","svn_url":"https://github.com/Floppy/such-travis","homepage":null,"size":80,"stargazers_count":0,"watchers_count":0,"language":"Ruby","has_issues":false,"has_downloads":true,"has_wiki":true,"forks_count":0,"mirror_url":null,"open_issues_count":0,"forks":0,"open_issues":0,"watchers":0,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true},"parent":{"id":15252879,"name":"such-travis","full_name":"theodi/such-travis","owner":{"login":"theodi","id":2492770,"avatar_url":"https://gravatar.com/avatar/07ab537732bae0cb3167a3bd8f42f885?d=https%3A%2F%2Fidenticons.github.com%2F8c3ce638034d7d23f1ffb32d423fc1f7.png&r=x","gravatar_id":"07ab537732bae0cb3167a3bd8f42f885","url":"https://api.github.com/users/theodi","html_url":"https://github.com/theodi","followers_url":"https://api.github.com/users/theodi/followers","following_url":"https://api.github.com/users/theodi/following{/other_user}","gists_url":"https://api.github.com/users/theodi/gists{/gist_id}","starred_url":"https://api.github.com/users/theodi/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/theodi/subscriptions","organizations_url":"https://api.github.com/users/theodi/orgs","repos_url":"https://api.github.com/users/theodi/repos","events_url":"https://api.github.com/users/theodi/events{/privacy}","received_events_url":"https://api.github.com/users/theodi/received_events","type":"Organization","site_admin":false},"private":false,"html_url":"https://github.com/theodi/such-travis","description":"","fork":false,"url":"https://api.github.com/repos/theodi/such-travis","forks_url":"https://api.github.com/repos/theodi/such-travis/forks","keys_url":"https://api.github.com/repos/theodi/such-travis/keys{/key_id}","collaborators_url":"https://api.github.com/repos/theodi/such-travis/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/theodi/such-travis/teams","hooks_url":"https://api.github.com/repos/theodi/such-travis/hooks","issue_events_url":"https://api.github.com/repos/theodi/such-travis/issues/events{/number}","events_url":"https://api.github.com/repos/theodi/such-travis/events","assignees_url":"https://api.github.com/repos/theodi/such-travis/assignees{/user}","branches_url":"https://api.github.com/repos/theodi/such-travis/branches{/branch}","tags_url":"https://api.github.com/repos/theodi/such-travis/tags","blobs_url":"https://api.github.com/repos/theodi/such-travis/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/theodi/such-travis/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/theodi/such-travis/git/refs{/sha}","trees_url":"https://api.github.com/repos/theodi/such-travis/git/trees{/sha}","statuses_url":"https://api.github.com/repos/theodi/such-travis/statuses/{sha}","languages_url":"https://api.github.com/repos/theodi/such-travis/languages","stargazers_url":"https://api.github.com/repos/theodi/such-travis/stargazers","contributors_url":"https://api.github.com/repos/theodi/such-travis/contributors","subscribers_url":"https://api.github.com/repos/theodi/such-travis/subscribers","subscription_url":"https://api.github.com/repos/theodi/such-travis/subscription","commits_url":"https://api.github.com/repos/theodi/such-travis/commits{/sha}","git_commits_url":"https://api.github.com/repos/theodi/such-travis/git/commits{/sha}","comments_url":"https://api.github.com/repos/theodi/such-travis/comments{/number}","issue_comment_url":"https://api.github.com/repos/theodi/such-travis/issues/comments/{number}","contents_url":"https://api.github.com/repos/theodi/such-travis/contents/{+path}","compare_url":"https://api.github.com/repos/theodi/such-travis/compare/{base}...{head}","merges_url":"https://api.github.com/repos/theodi/such-travis/merges","archive_url":"https://api.github.com/repos/theodi/such-travis/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/theodi/such-travis/downloads","issues_url":"https://api.github.com/repos/theodi/such-travis/issues{/number}","pulls_url":"https://api.github.com/repos/theodi/such-travis/pulls{/number}","milestones_url":"https://api.github.com/repos/theodi/such-travis/milestones{/number}","notifications_url":"https://api.github.com/repos/theodi/such-travis/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/theodi/such-travis/labels{/name}","releases_url":"https://api.github.com/repos/theodi/such-travis/releases{/id}","created_at":"2013-12-17T11:34:41Z","updated_at":"2013-12-17T15:17:27Z","pushed_at":"2013-12-17T14:54:00Z","git_url":"git://github.com/theodi/such-travis.git","ssh_url":"git@github.com:theodi/such-travis.git","clone_url":"https://github.com/theodi/such-travis.git","svn_url":"https://github.com/theodi/such-travis","homepage":null,"size":80,"stargazers_count":0,"watchers_count":0,"language":"Ruby","has_issues":true,"has_downloads":true,"has_wiki":true,"forks_count":1,"mirror_url":null,"open_issues_count":0,"forks":1,"open_issues":0,"watchers":0,"default_branch":"master","master_branch":"master"},"source":{"id":15252879,"name":"such-travis","full_name":"theodi/such-travis","owner":{"login":"theodi","id":2492770,"avatar_url":"https://gravatar.com/avatar/07ab537732bae0cb3167a3bd8f42f885?d=https%3A%2F%2Fidenticons.github.com%2F8c3ce638034d7d23f1ffb32d423fc1f7.png&r=x","gravatar_id":"07ab537732bae0cb3167a3bd8f42f885","url":"https://api.github.com/users/theodi","html_url":"https://github.com/theodi","followers_url":"https://api.github.com/users/theodi/followers","following_url":"https://api.github.com/users/theodi/following{/other_user}","gists_url":"https://api.github.com/users/theodi/gists{/gist_id}","starred_url":"https://api.github.com/users/theodi/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/theodi/subscriptions","organizations_url":"https://api.github.com/users/theodi/orgs","repos_url":"https://api.github.com/users/theodi/repos","events_url":"https://api.github.com/users/theodi/events{/privacy}","received_events_url":"https://api.github.com/users/theodi/received_events","type":"Organization","site_admin":false},"private":false,"html_url":"https://github.com/theodi/such-travis","description":"","fork":false,"url":"https://api.github.com/repos/theodi/such-travis","forks_url":"https://api.github.com/repos/theodi/such-travis/forks","keys_url":"https://api.github.com/repos/theodi/such-travis/keys{/key_id}","collaborators_url":"https://api.github.com/repos/theodi/such-travis/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/theodi/such-travis/teams","hooks_url":"https://api.github.com/repos/theodi/such-travis/hooks","issue_events_url":"https://api.github.com/repos/theodi/such-travis/issues/events{/number}","events_url":"https://api.github.com/repos/theodi/such-travis/events","assignees_url":"https://api.github.com/repos/theodi/such-travis/assignees{/user}","branches_url":"https://api.github.com/repos/theodi/such-travis/branches{/branch}","tags_url":"https://api.github.com/repos/theodi/such-travis/tags","blobs_url":"https://api.github.com/repos/theodi/such-travis/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/theodi/such-travis/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/theodi/such-travis/git/refs{/sha}","trees_url":"https://api.github.com/repos/theodi/such-travis/git/trees{/sha}","statuses_url":"https://api.github.com/repos/theodi/such-travis/statuses/{sha}","languages_url":"https://api.github.com/repos/theodi/such-travis/languages","stargazers_url":"https://api.github.com/repos/theodi/such-travis/stargazers","contributors_url":"https://api.github.com/repos/theodi/such-travis/contributors","subscribers_url":"https://api.github.com/repos/theodi/such-travis/subscribers","subscription_url":"https://api.github.com/repos/theodi/such-travis/subscription","commits_url":"https://api.github.com/repos/theodi/such-travis/commits{/sha}","git_commits_url":"https://api.github.com/repos/theodi/such-travis/git/commits{/sha}","comments_url":"https://api.github.com/repos/theodi/such-travis/comments{/number}","issue_comment_url":"https://api.github.com/repos/theodi/such-travis/issues/comments/{number}","contents_url":"https://api.github.com/repos/theodi/such-travis/contents/{+path}","compare_url":"https://api.github.com/repos/theodi/such-travis/compare/{base}...{head}","merges_url":"https://api.github.com/repos/theodi/such-travis/merges","archive_url":"https://api.github.com/repos/theodi/such-travis/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/theodi/such-travis/downloads","issues_url":"https://api.github.com/repos/theodi/such-travis/issues{/number}","pulls_url":"https://api.github.com/repos/theodi/such-travis/pulls{/number}","milestones_url":"https://api.github.com/repos/theodi/such-travis/milestones{/number}","notifications_url":"https://api.github.com/repos/theodi/such-travis/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/theodi/such-travis/labels{/name}","releases_url":"https://api.github.com/repos/theodi/such-travis/releases{/id}","created_at":"2013-12-17T11:34:41Z","updated_at":"2013-12-17T15:17:27Z","pushed_at":"2013-12-17T14:54:00Z","git_url":"git://github.com/theodi/such-travis.git","ssh_url":"git@github.com:theodi/such-travis.git","clone_url":"https://github.com/theodi/such-travis.git","svn_url":"https://github.com/theodi/such-travis","homepage":null,"size":80,"stargazers_count":0,"watchers_count":0,"language":"Ruby","has_issues":true,"has_downloads":true,"has_wiki":true,"forks_count":1,"mirror_url":null,"open_issues_count":0,"forks":1,"open_issues":0,"watchers":0,"default_branch":"master","master_branch":"master"},"network_count":1,"subscribers_count":0}'
+    http_version: 
+  recorded_at: Tue, 17 Dec 2013 15:17:39 GMT
+- request:
+    method: post
+    uri: https://api.github.com/repos/Floppy/such-travis/pulls?access_token=<FORKBOMB_GITHUB_OAUTH_TOKEN>
+    body:
+      encoding: UTF-8
+      string: '{"title":"Upstream changes","body":"Automatically opened by http://forkbomb.io","head":"theodi:master","base":"master"}'
+    headers:
+      Accept:
+      - application/vnd.github.v3+json,application/vnd.github.beta+json;q=0.5,application/json;q=0.1
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - Github Ruby Gem 0.11.1
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token="<FORKBOMB_GITHUB_OAUTH_TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Tue, 17 Dec 2013 15:17:40 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Status:
+      - 201 Created
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4887'
+      X-Ratelimit-Reset:
+      - '1387294863'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Etag:
+      - '"9f9a302a3a18ba497f9597e8805e750d"'
+      X-Oauth-Scopes:
+      - user, public_repo, repo, gist
+      X-Accepted-Oauth-Scopes:
+      - repo, repo:status, repo:deployment, public_repo, delete_repo, user, user:email,
+        user:follow, admin:org, write:org, read:org, gist, site_admin, user:assets,
+        user:assets:read
+      Location:
+      - https://api.github.com/repos/Floppy/such-travis/pulls/5
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '14115'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - '*'
+      X-Github-Request-Id:
+      - 569C372E:2C50:76E5992:52B06B13
+    body:
+      encoding: UTF-8
+      string: '{"url":"https://api.github.com/repos/Floppy/such-travis/pulls/5","id":10898041,"html_url":"https://github.com/Floppy/such-travis/pull/5","diff_url":"https://github.com/Floppy/such-travis/pull/5.diff","patch_url":"https://github.com/Floppy/such-travis/pull/5.patch","issue_url":"https://github.com/Floppy/such-travis/pull/5","number":5,"state":"open","title":"Upstream
+        changes","user":{"login":"forkbot","id":6198419,"avatar_url":"https://gravatar.com/avatar/7df8109a6e65965c5723dee7be63a769?d=https%3A%2F%2Fidenticons.github.com%2Fc704ac6c30452026307452d18c1614cd.png&r=x","gravatar_id":"7df8109a6e65965c5723dee7be63a769","url":"https://api.github.com/users/forkbot","html_url":"https://github.com/forkbot","followers_url":"https://api.github.com/users/forkbot/followers","following_url":"https://api.github.com/users/forkbot/following{/other_user}","gists_url":"https://api.github.com/users/forkbot/gists{/gist_id}","starred_url":"https://api.github.com/users/forkbot/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/forkbot/subscriptions","organizations_url":"https://api.github.com/users/forkbot/orgs","repos_url":"https://api.github.com/users/forkbot/repos","events_url":"https://api.github.com/users/forkbot/events{/privacy}","received_events_url":"https://api.github.com/users/forkbot/received_events","type":"User","site_admin":false},"body":"Automatically
+        opened by http://forkbomb.io","created_at":"2013-12-17T15:17:40Z","updated_at":"2013-12-17T15:17:40Z","closed_at":null,"merged_at":null,"merge_commit_sha":null,"assignee":null,"milestone":null,"commits_url":"https://github.com/Floppy/such-travis/pull/5/commits","review_comments_url":"https://github.com/Floppy/such-travis/pull/5/comments","review_comment_url":"/repos/Floppy/such-travis/pulls/comments/{number}","comments_url":"https://api.github.com/repos/Floppy/such-travis/issues/5/comments","statuses_url":"https://api.github.com/repos/Floppy/such-travis/statuses/a6c0aa78b76980947eeec491b564bf5b748c4574","head":{"label":"theodi:master","ref":"master","sha":"a6c0aa78b76980947eeec491b564bf5b748c4574","user":{"login":"theodi","id":2492770,"avatar_url":"https://gravatar.com/avatar/07ab537732bae0cb3167a3bd8f42f885?d=https%3A%2F%2Fidenticons.github.com%2F8c3ce638034d7d23f1ffb32d423fc1f7.png&r=x","gravatar_id":"07ab537732bae0cb3167a3bd8f42f885","url":"https://api.github.com/users/theodi","html_url":"https://github.com/theodi","followers_url":"https://api.github.com/users/theodi/followers","following_url":"https://api.github.com/users/theodi/following{/other_user}","gists_url":"https://api.github.com/users/theodi/gists{/gist_id}","starred_url":"https://api.github.com/users/theodi/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/theodi/subscriptions","organizations_url":"https://api.github.com/users/theodi/orgs","repos_url":"https://api.github.com/users/theodi/repos","events_url":"https://api.github.com/users/theodi/events{/privacy}","received_events_url":"https://api.github.com/users/theodi/received_events","type":"Organization","site_admin":false},"repo":{"id":15252879,"name":"such-travis","full_name":"theodi/such-travis","owner":{"login":"theodi","id":2492770,"avatar_url":"https://gravatar.com/avatar/07ab537732bae0cb3167a3bd8f42f885?d=https%3A%2F%2Fidenticons.github.com%2F8c3ce638034d7d23f1ffb32d423fc1f7.png&r=x","gravatar_id":"07ab537732bae0cb3167a3bd8f42f885","url":"https://api.github.com/users/theodi","html_url":"https://github.com/theodi","followers_url":"https://api.github.com/users/theodi/followers","following_url":"https://api.github.com/users/theodi/following{/other_user}","gists_url":"https://api.github.com/users/theodi/gists{/gist_id}","starred_url":"https://api.github.com/users/theodi/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/theodi/subscriptions","organizations_url":"https://api.github.com/users/theodi/orgs","repos_url":"https://api.github.com/users/theodi/repos","events_url":"https://api.github.com/users/theodi/events{/privacy}","received_events_url":"https://api.github.com/users/theodi/received_events","type":"Organization","site_admin":false},"private":false,"html_url":"https://github.com/theodi/such-travis","description":"","fork":false,"url":"https://api.github.com/repos/theodi/such-travis","forks_url":"https://api.github.com/repos/theodi/such-travis/forks","keys_url":"https://api.github.com/repos/theodi/such-travis/keys{/key_id}","collaborators_url":"https://api.github.com/repos/theodi/such-travis/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/theodi/such-travis/teams","hooks_url":"https://api.github.com/repos/theodi/such-travis/hooks","issue_events_url":"https://api.github.com/repos/theodi/such-travis/issues/events{/number}","events_url":"https://api.github.com/repos/theodi/such-travis/events","assignees_url":"https://api.github.com/repos/theodi/such-travis/assignees{/user}","branches_url":"https://api.github.com/repos/theodi/such-travis/branches{/branch}","tags_url":"https://api.github.com/repos/theodi/such-travis/tags","blobs_url":"https://api.github.com/repos/theodi/such-travis/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/theodi/such-travis/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/theodi/such-travis/git/refs{/sha}","trees_url":"https://api.github.com/repos/theodi/such-travis/git/trees{/sha}","statuses_url":"https://api.github.com/repos/theodi/such-travis/statuses/{sha}","languages_url":"https://api.github.com/repos/theodi/such-travis/languages","stargazers_url":"https://api.github.com/repos/theodi/such-travis/stargazers","contributors_url":"https://api.github.com/repos/theodi/such-travis/contributors","subscribers_url":"https://api.github.com/repos/theodi/such-travis/subscribers","subscription_url":"https://api.github.com/repos/theodi/such-travis/subscription","commits_url":"https://api.github.com/repos/theodi/such-travis/commits{/sha}","git_commits_url":"https://api.github.com/repos/theodi/such-travis/git/commits{/sha}","comments_url":"https://api.github.com/repos/theodi/such-travis/comments{/number}","issue_comment_url":"https://api.github.com/repos/theodi/such-travis/issues/comments/{number}","contents_url":"https://api.github.com/repos/theodi/such-travis/contents/{+path}","compare_url":"https://api.github.com/repos/theodi/such-travis/compare/{base}...{head}","merges_url":"https://api.github.com/repos/theodi/such-travis/merges","archive_url":"https://api.github.com/repos/theodi/such-travis/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/theodi/such-travis/downloads","issues_url":"https://api.github.com/repos/theodi/such-travis/issues{/number}","pulls_url":"https://api.github.com/repos/theodi/such-travis/pulls{/number}","milestones_url":"https://api.github.com/repos/theodi/such-travis/milestones{/number}","notifications_url":"https://api.github.com/repos/theodi/such-travis/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/theodi/such-travis/labels{/name}","releases_url":"https://api.github.com/repos/theodi/such-travis/releases{/id}","created_at":"2013-12-17T11:34:41Z","updated_at":"2013-12-17T15:17:40Z","pushed_at":"2013-12-17T14:54:00Z","git_url":"git://github.com/theodi/such-travis.git","ssh_url":"git@github.com:theodi/such-travis.git","clone_url":"https://github.com/theodi/such-travis.git","svn_url":"https://github.com/theodi/such-travis","homepage":null,"size":80,"stargazers_count":0,"watchers_count":0,"language":"Ruby","has_issues":true,"has_downloads":true,"has_wiki":true,"forks_count":1,"mirror_url":null,"open_issues_count":0,"forks":1,"open_issues":0,"watchers":0,"default_branch":"master","master_branch":"master"}},"base":{"label":"Floppy:master","ref":"master","sha":"72b6bf50ee49848073e1bcf78b157a999dbe121a","user":{"login":"Floppy","id":3565,"avatar_url":"https://gravatar.com/avatar/c150a49c7709fa40bffca545ecf8942d?d=https%3A%2F%2Fidenticons.github.com%2Fe6e713296627dff6475085cc6a224464.png&r=x","gravatar_id":"c150a49c7709fa40bffca545ecf8942d","url":"https://api.github.com/users/Floppy","html_url":"https://github.com/Floppy","followers_url":"https://api.github.com/users/Floppy/followers","following_url":"https://api.github.com/users/Floppy/following{/other_user}","gists_url":"https://api.github.com/users/Floppy/gists{/gist_id}","starred_url":"https://api.github.com/users/Floppy/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/Floppy/subscriptions","organizations_url":"https://api.github.com/users/Floppy/orgs","repos_url":"https://api.github.com/users/Floppy/repos","events_url":"https://api.github.com/users/Floppy/events{/privacy}","received_events_url":"https://api.github.com/users/Floppy/received_events","type":"User","site_admin":false},"repo":{"id":15253182,"name":"such-travis","full_name":"Floppy/such-travis","owner":{"login":"Floppy","id":3565,"avatar_url":"https://gravatar.com/avatar/c150a49c7709fa40bffca545ecf8942d?d=https%3A%2F%2Fidenticons.github.com%2Fe6e713296627dff6475085cc6a224464.png&r=x","gravatar_id":"c150a49c7709fa40bffca545ecf8942d","url":"https://api.github.com/users/Floppy","html_url":"https://github.com/Floppy","followers_url":"https://api.github.com/users/Floppy/followers","following_url":"https://api.github.com/users/Floppy/following{/other_user}","gists_url":"https://api.github.com/users/Floppy/gists{/gist_id}","starred_url":"https://api.github.com/users/Floppy/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/Floppy/subscriptions","organizations_url":"https://api.github.com/users/Floppy/orgs","repos_url":"https://api.github.com/users/Floppy/repos","events_url":"https://api.github.com/users/Floppy/events{/privacy}","received_events_url":"https://api.github.com/users/Floppy/received_events","type":"User","site_admin":false},"private":false,"html_url":"https://github.com/Floppy/such-travis","description":"","fork":true,"url":"https://api.github.com/repos/Floppy/such-travis","forks_url":"https://api.github.com/repos/Floppy/such-travis/forks","keys_url":"https://api.github.com/repos/Floppy/such-travis/keys{/key_id}","collaborators_url":"https://api.github.com/repos/Floppy/such-travis/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/Floppy/such-travis/teams","hooks_url":"https://api.github.com/repos/Floppy/such-travis/hooks","issue_events_url":"https://api.github.com/repos/Floppy/such-travis/issues/events{/number}","events_url":"https://api.github.com/repos/Floppy/such-travis/events","assignees_url":"https://api.github.com/repos/Floppy/such-travis/assignees{/user}","branches_url":"https://api.github.com/repos/Floppy/such-travis/branches{/branch}","tags_url":"https://api.github.com/repos/Floppy/such-travis/tags","blobs_url":"https://api.github.com/repos/Floppy/such-travis/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/Floppy/such-travis/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/Floppy/such-travis/git/refs{/sha}","trees_url":"https://api.github.com/repos/Floppy/such-travis/git/trees{/sha}","statuses_url":"https://api.github.com/repos/Floppy/such-travis/statuses/{sha}","languages_url":"https://api.github.com/repos/Floppy/such-travis/languages","stargazers_url":"https://api.github.com/repos/Floppy/such-travis/stargazers","contributors_url":"https://api.github.com/repos/Floppy/such-travis/contributors","subscribers_url":"https://api.github.com/repos/Floppy/such-travis/subscribers","subscription_url":"https://api.github.com/repos/Floppy/such-travis/subscription","commits_url":"https://api.github.com/repos/Floppy/such-travis/commits{/sha}","git_commits_url":"https://api.github.com/repos/Floppy/such-travis/git/commits{/sha}","comments_url":"https://api.github.com/repos/Floppy/such-travis/comments{/number}","issue_comment_url":"https://api.github.com/repos/Floppy/such-travis/issues/comments/{number}","contents_url":"https://api.github.com/repos/Floppy/such-travis/contents/{+path}","compare_url":"https://api.github.com/repos/Floppy/such-travis/compare/{base}...{head}","merges_url":"https://api.github.com/repos/Floppy/such-travis/merges","archive_url":"https://api.github.com/repos/Floppy/such-travis/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/Floppy/such-travis/downloads","issues_url":"https://api.github.com/repos/Floppy/such-travis/issues{/number}","pulls_url":"https://api.github.com/repos/Floppy/such-travis/pulls{/number}","milestones_url":"https://api.github.com/repos/Floppy/such-travis/milestones{/number}","notifications_url":"https://api.github.com/repos/Floppy/such-travis/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/Floppy/such-travis/labels{/name}","releases_url":"https://api.github.com/repos/Floppy/such-travis/releases{/id}","created_at":"2013-12-17T11:52:20Z","updated_at":"2013-12-17T11:52:21Z","pushed_at":"2013-12-17T11:45:57Z","git_url":"git://github.com/Floppy/such-travis.git","ssh_url":"git@github.com:Floppy/such-travis.git","clone_url":"https://github.com/Floppy/such-travis.git","svn_url":"https://github.com/Floppy/such-travis","homepage":null,"size":80,"stargazers_count":0,"watchers_count":0,"language":"Ruby","has_issues":false,"has_downloads":true,"has_wiki":true,"forks_count":0,"mirror_url":null,"open_issues_count":1,"forks":0,"open_issues":1,"watchers":0,"default_branch":"master","master_branch":"master"}},"_links":{"self":{"href":"https://api.github.com/repos/Floppy/such-travis/pulls/5"},"html":{"href":"https://github.com/Floppy/such-travis/pull/5"},"issue":{"href":"https://api.github.com/repos/Floppy/such-travis/issues/5"},"comments":{"href":"https://api.github.com/repos/Floppy/such-travis/issues/5/comments"},"review_comments":{"href":"https://api.github.com/repos/Floppy/such-travis/pulls/5/comments"},"statuses":{"href":"https://api.github.com/repos/Floppy/such-travis/statuses/a6c0aa78b76980947eeec491b564bf5b748c4574"}},"merged":false,"mergeable":null,"mergeable_state":"unknown","merged_by":null,"comments":0,"review_comments":0,"commits":23,"additions":11,"deletions":14,"changed_files":6}'
+    http_version: 
+  recorded_at: Tue, 17 Dec 2013 15:17:40 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/Floppy/such-travis/pulls?access_token=<FORKBOMB_GITHUB_OAUTH_TOKEN>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json,application/vnd.github.beta+json;q=0.5,application/json;q=0.1
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - Github Ruby Gem 0.11.1
+      Authorization:
+      - Token token="<FORKBOMB_GITHUB_OAUTH_TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Tue, 17 Dec 2013 15:17:40 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4886'
+      X-Ratelimit-Reset:
+      - '1387294863'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Etag:
+      - '"da78217dd7b0b23171057533112942ce"'
+      X-Oauth-Scopes:
+      - user, public_repo, repo, gist
+      X-Accepted-Oauth-Scopes:
+      - repo, repo:status, repo:deployment, public_repo, delete_repo, user, user:email,
+        user:follow, admin:org, write:org, read:org, gist, site_admin, user:assets,
+        user:assets:read
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - '*'
+      X-Github-Request-Id:
+      - 569C372E:2C4D:8894850:52B06B14
+    body:
+      encoding: UTF-8
+      string: '[{"url":"https://api.github.com/repos/Floppy/such-travis/pulls/5","id":10898041,"html_url":"https://github.com/Floppy/such-travis/pull/5","diff_url":"https://github.com/Floppy/such-travis/pull/5.diff","patch_url":"https://github.com/Floppy/such-travis/pull/5.patch","issue_url":"https://github.com/Floppy/such-travis/pull/5","number":5,"state":"open","title":"Upstream
+        changes","user":{"login":"forkbot","id":6198419,"avatar_url":"https://gravatar.com/avatar/7df8109a6e65965c5723dee7be63a769?d=https%3A%2F%2Fidenticons.github.com%2Fc704ac6c30452026307452d18c1614cd.png&r=x","gravatar_id":"7df8109a6e65965c5723dee7be63a769","url":"https://api.github.com/users/forkbot","html_url":"https://github.com/forkbot","followers_url":"https://api.github.com/users/forkbot/followers","following_url":"https://api.github.com/users/forkbot/following{/other_user}","gists_url":"https://api.github.com/users/forkbot/gists{/gist_id}","starred_url":"https://api.github.com/users/forkbot/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/forkbot/subscriptions","organizations_url":"https://api.github.com/users/forkbot/orgs","repos_url":"https://api.github.com/users/forkbot/repos","events_url":"https://api.github.com/users/forkbot/events{/privacy}","received_events_url":"https://api.github.com/users/forkbot/received_events","type":"User","site_admin":false},"body":"Automatically
+        opened by http://forkbomb.io","created_at":"2013-12-17T15:17:40Z","updated_at":"2013-12-17T15:17:40Z","closed_at":null,"merged_at":null,"merge_commit_sha":"969bceb3709688f5021c73acb6313f402aebed0b","assignee":null,"milestone":null,"commits_url":"https://github.com/Floppy/such-travis/pull/5/commits","review_comments_url":"https://github.com/Floppy/such-travis/pull/5/comments","review_comment_url":"/repos/Floppy/such-travis/pulls/comments/{number}","comments_url":"https://api.github.com/repos/Floppy/such-travis/issues/5/comments","statuses_url":"https://api.github.com/repos/Floppy/such-travis/statuses/a6c0aa78b76980947eeec491b564bf5b748c4574","head":{"label":"theodi:master","ref":"master","sha":"a6c0aa78b76980947eeec491b564bf5b748c4574","user":{"login":"theodi","id":2492770,"avatar_url":"https://gravatar.com/avatar/07ab537732bae0cb3167a3bd8f42f885?d=https%3A%2F%2Fidenticons.github.com%2F8c3ce638034d7d23f1ffb32d423fc1f7.png&r=x","gravatar_id":"07ab537732bae0cb3167a3bd8f42f885","url":"https://api.github.com/users/theodi","html_url":"https://github.com/theodi","followers_url":"https://api.github.com/users/theodi/followers","following_url":"https://api.github.com/users/theodi/following{/other_user}","gists_url":"https://api.github.com/users/theodi/gists{/gist_id}","starred_url":"https://api.github.com/users/theodi/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/theodi/subscriptions","organizations_url":"https://api.github.com/users/theodi/orgs","repos_url":"https://api.github.com/users/theodi/repos","events_url":"https://api.github.com/users/theodi/events{/privacy}","received_events_url":"https://api.github.com/users/theodi/received_events","type":"Organization","site_admin":false},"repo":{"id":15252879,"name":"such-travis","full_name":"theodi/such-travis","owner":{"login":"theodi","id":2492770,"avatar_url":"https://gravatar.com/avatar/07ab537732bae0cb3167a3bd8f42f885?d=https%3A%2F%2Fidenticons.github.com%2F8c3ce638034d7d23f1ffb32d423fc1f7.png&r=x","gravatar_id":"07ab537732bae0cb3167a3bd8f42f885","url":"https://api.github.com/users/theodi","html_url":"https://github.com/theodi","followers_url":"https://api.github.com/users/theodi/followers","following_url":"https://api.github.com/users/theodi/following{/other_user}","gists_url":"https://api.github.com/users/theodi/gists{/gist_id}","starred_url":"https://api.github.com/users/theodi/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/theodi/subscriptions","organizations_url":"https://api.github.com/users/theodi/orgs","repos_url":"https://api.github.com/users/theodi/repos","events_url":"https://api.github.com/users/theodi/events{/privacy}","received_events_url":"https://api.github.com/users/theodi/received_events","type":"Organization","site_admin":false},"private":false,"html_url":"https://github.com/theodi/such-travis","description":"","fork":false,"url":"https://api.github.com/repos/theodi/such-travis","forks_url":"https://api.github.com/repos/theodi/such-travis/forks","keys_url":"https://api.github.com/repos/theodi/such-travis/keys{/key_id}","collaborators_url":"https://api.github.com/repos/theodi/such-travis/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/theodi/such-travis/teams","hooks_url":"https://api.github.com/repos/theodi/such-travis/hooks","issue_events_url":"https://api.github.com/repos/theodi/such-travis/issues/events{/number}","events_url":"https://api.github.com/repos/theodi/such-travis/events","assignees_url":"https://api.github.com/repos/theodi/such-travis/assignees{/user}","branches_url":"https://api.github.com/repos/theodi/such-travis/branches{/branch}","tags_url":"https://api.github.com/repos/theodi/such-travis/tags","blobs_url":"https://api.github.com/repos/theodi/such-travis/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/theodi/such-travis/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/theodi/such-travis/git/refs{/sha}","trees_url":"https://api.github.com/repos/theodi/such-travis/git/trees{/sha}","statuses_url":"https://api.github.com/repos/theodi/such-travis/statuses/{sha}","languages_url":"https://api.github.com/repos/theodi/such-travis/languages","stargazers_url":"https://api.github.com/repos/theodi/such-travis/stargazers","contributors_url":"https://api.github.com/repos/theodi/such-travis/contributors","subscribers_url":"https://api.github.com/repos/theodi/such-travis/subscribers","subscription_url":"https://api.github.com/repos/theodi/such-travis/subscription","commits_url":"https://api.github.com/repos/theodi/such-travis/commits{/sha}","git_commits_url":"https://api.github.com/repos/theodi/such-travis/git/commits{/sha}","comments_url":"https://api.github.com/repos/theodi/such-travis/comments{/number}","issue_comment_url":"https://api.github.com/repos/theodi/such-travis/issues/comments/{number}","contents_url":"https://api.github.com/repos/theodi/such-travis/contents/{+path}","compare_url":"https://api.github.com/repos/theodi/such-travis/compare/{base}...{head}","merges_url":"https://api.github.com/repos/theodi/such-travis/merges","archive_url":"https://api.github.com/repos/theodi/such-travis/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/theodi/such-travis/downloads","issues_url":"https://api.github.com/repos/theodi/such-travis/issues{/number}","pulls_url":"https://api.github.com/repos/theodi/such-travis/pulls{/number}","milestones_url":"https://api.github.com/repos/theodi/such-travis/milestones{/number}","notifications_url":"https://api.github.com/repos/theodi/such-travis/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/theodi/such-travis/labels{/name}","releases_url":"https://api.github.com/repos/theodi/such-travis/releases{/id}","created_at":"2013-12-17T11:34:41Z","updated_at":"2013-12-17T15:17:40Z","pushed_at":"2013-12-17T14:54:00Z","git_url":"git://github.com/theodi/such-travis.git","ssh_url":"git@github.com:theodi/such-travis.git","clone_url":"https://github.com/theodi/such-travis.git","svn_url":"https://github.com/theodi/such-travis","homepage":null,"size":80,"stargazers_count":0,"watchers_count":0,"language":"Ruby","has_issues":true,"has_downloads":true,"has_wiki":true,"forks_count":1,"mirror_url":null,"open_issues_count":0,"forks":1,"open_issues":0,"watchers":0,"default_branch":"master","master_branch":"master"}},"base":{"label":"Floppy:master","ref":"master","sha":"72b6bf50ee49848073e1bcf78b157a999dbe121a","user":{"login":"Floppy","id":3565,"avatar_url":"https://gravatar.com/avatar/c150a49c7709fa40bffca545ecf8942d?d=https%3A%2F%2Fidenticons.github.com%2Fe6e713296627dff6475085cc6a224464.png&r=x","gravatar_id":"c150a49c7709fa40bffca545ecf8942d","url":"https://api.github.com/users/Floppy","html_url":"https://github.com/Floppy","followers_url":"https://api.github.com/users/Floppy/followers","following_url":"https://api.github.com/users/Floppy/following{/other_user}","gists_url":"https://api.github.com/users/Floppy/gists{/gist_id}","starred_url":"https://api.github.com/users/Floppy/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/Floppy/subscriptions","organizations_url":"https://api.github.com/users/Floppy/orgs","repos_url":"https://api.github.com/users/Floppy/repos","events_url":"https://api.github.com/users/Floppy/events{/privacy}","received_events_url":"https://api.github.com/users/Floppy/received_events","type":"User","site_admin":false},"repo":{"id":15253182,"name":"such-travis","full_name":"Floppy/such-travis","owner":{"login":"Floppy","id":3565,"avatar_url":"https://gravatar.com/avatar/c150a49c7709fa40bffca545ecf8942d?d=https%3A%2F%2Fidenticons.github.com%2Fe6e713296627dff6475085cc6a224464.png&r=x","gravatar_id":"c150a49c7709fa40bffca545ecf8942d","url":"https://api.github.com/users/Floppy","html_url":"https://github.com/Floppy","followers_url":"https://api.github.com/users/Floppy/followers","following_url":"https://api.github.com/users/Floppy/following{/other_user}","gists_url":"https://api.github.com/users/Floppy/gists{/gist_id}","starred_url":"https://api.github.com/users/Floppy/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/Floppy/subscriptions","organizations_url":"https://api.github.com/users/Floppy/orgs","repos_url":"https://api.github.com/users/Floppy/repos","events_url":"https://api.github.com/users/Floppy/events{/privacy}","received_events_url":"https://api.github.com/users/Floppy/received_events","type":"User","site_admin":false},"private":false,"html_url":"https://github.com/Floppy/such-travis","description":"","fork":true,"url":"https://api.github.com/repos/Floppy/such-travis","forks_url":"https://api.github.com/repos/Floppy/such-travis/forks","keys_url":"https://api.github.com/repos/Floppy/such-travis/keys{/key_id}","collaborators_url":"https://api.github.com/repos/Floppy/such-travis/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/Floppy/such-travis/teams","hooks_url":"https://api.github.com/repos/Floppy/such-travis/hooks","issue_events_url":"https://api.github.com/repos/Floppy/such-travis/issues/events{/number}","events_url":"https://api.github.com/repos/Floppy/such-travis/events","assignees_url":"https://api.github.com/repos/Floppy/such-travis/assignees{/user}","branches_url":"https://api.github.com/repos/Floppy/such-travis/branches{/branch}","tags_url":"https://api.github.com/repos/Floppy/such-travis/tags","blobs_url":"https://api.github.com/repos/Floppy/such-travis/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/Floppy/such-travis/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/Floppy/such-travis/git/refs{/sha}","trees_url":"https://api.github.com/repos/Floppy/such-travis/git/trees{/sha}","statuses_url":"https://api.github.com/repos/Floppy/such-travis/statuses/{sha}","languages_url":"https://api.github.com/repos/Floppy/such-travis/languages","stargazers_url":"https://api.github.com/repos/Floppy/such-travis/stargazers","contributors_url":"https://api.github.com/repos/Floppy/such-travis/contributors","subscribers_url":"https://api.github.com/repos/Floppy/such-travis/subscribers","subscription_url":"https://api.github.com/repos/Floppy/such-travis/subscription","commits_url":"https://api.github.com/repos/Floppy/such-travis/commits{/sha}","git_commits_url":"https://api.github.com/repos/Floppy/such-travis/git/commits{/sha}","comments_url":"https://api.github.com/repos/Floppy/such-travis/comments{/number}","issue_comment_url":"https://api.github.com/repos/Floppy/such-travis/issues/comments/{number}","contents_url":"https://api.github.com/repos/Floppy/such-travis/contents/{+path}","compare_url":"https://api.github.com/repos/Floppy/such-travis/compare/{base}...{head}","merges_url":"https://api.github.com/repos/Floppy/such-travis/merges","archive_url":"https://api.github.com/repos/Floppy/such-travis/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/Floppy/such-travis/downloads","issues_url":"https://api.github.com/repos/Floppy/such-travis/issues{/number}","pulls_url":"https://api.github.com/repos/Floppy/such-travis/pulls{/number}","milestones_url":"https://api.github.com/repos/Floppy/such-travis/milestones{/number}","notifications_url":"https://api.github.com/repos/Floppy/such-travis/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/Floppy/such-travis/labels{/name}","releases_url":"https://api.github.com/repos/Floppy/such-travis/releases{/id}","created_at":"2013-12-17T11:52:20Z","updated_at":"2013-12-17T11:52:21Z","pushed_at":"2013-12-17T11:45:57Z","git_url":"git://github.com/Floppy/such-travis.git","ssh_url":"git@github.com:Floppy/such-travis.git","clone_url":"https://github.com/Floppy/such-travis.git","svn_url":"https://github.com/Floppy/such-travis","homepage":null,"size":80,"stargazers_count":0,"watchers_count":0,"language":"Ruby","has_issues":false,"has_downloads":true,"has_wiki":true,"forks_count":0,"mirror_url":null,"open_issues_count":1,"forks":0,"open_issues":1,"watchers":0,"default_branch":"master","master_branch":"master"}},"_links":{"self":{"href":"https://api.github.com/repos/Floppy/such-travis/pulls/5"},"html":{"href":"https://github.com/Floppy/such-travis/pull/5"},"issue":{"href":"https://api.github.com/repos/Floppy/such-travis/issues/5"},"comments":{"href":"https://api.github.com/repos/Floppy/such-travis/issues/5/comments"},"review_comments":{"href":"https://api.github.com/repos/Floppy/such-travis/pulls/5/comments"},"statuses":{"href":"https://api.github.com/repos/Floppy/such-travis/statuses/a6c0aa78b76980947eeec491b564bf5b748c4574"}}}]'
+    http_version: 
+  recorded_at: Tue, 17 Dec 2013 15:17:40 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/Floppy/such-travis/pulls?access_token=<FORKBOMB_GITHUB_OAUTH_TOKEN>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json,application/vnd.github.beta+json;q=0.5,application/json;q=0.1
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - Github Ruby Gem 0.11.1
+      Authorization:
+      - Token token="<FORKBOMB_GITHUB_OAUTH_TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Tue, 17 Dec 2013 15:17:41 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4885'
+      X-Ratelimit-Reset:
+      - '1387294863'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Etag:
+      - '"da78217dd7b0b23171057533112942ce"'
+      X-Oauth-Scopes:
+      - user, public_repo, repo, gist
+      X-Accepted-Oauth-Scopes:
+      - repo, repo:status, repo:deployment, public_repo, delete_repo, user, user:email,
+        user:follow, admin:org, write:org, read:org, gist, site_admin, user:assets,
+        user:assets:read
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - '*'
+      X-Github-Request-Id:
+      - 569C372E:2C4E:70CFFC4:52B06B15
+    body:
+      encoding: UTF-8
+      string: '[{"url":"https://api.github.com/repos/Floppy/such-travis/pulls/5","id":10898041,"html_url":"https://github.com/Floppy/such-travis/pull/5","diff_url":"https://github.com/Floppy/such-travis/pull/5.diff","patch_url":"https://github.com/Floppy/such-travis/pull/5.patch","issue_url":"https://github.com/Floppy/such-travis/pull/5","number":5,"state":"open","title":"Upstream
+        changes","user":{"login":"forkbot","id":6198419,"avatar_url":"https://gravatar.com/avatar/7df8109a6e65965c5723dee7be63a769?d=https%3A%2F%2Fidenticons.github.com%2Fc704ac6c30452026307452d18c1614cd.png&r=x","gravatar_id":"7df8109a6e65965c5723dee7be63a769","url":"https://api.github.com/users/forkbot","html_url":"https://github.com/forkbot","followers_url":"https://api.github.com/users/forkbot/followers","following_url":"https://api.github.com/users/forkbot/following{/other_user}","gists_url":"https://api.github.com/users/forkbot/gists{/gist_id}","starred_url":"https://api.github.com/users/forkbot/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/forkbot/subscriptions","organizations_url":"https://api.github.com/users/forkbot/orgs","repos_url":"https://api.github.com/users/forkbot/repos","events_url":"https://api.github.com/users/forkbot/events{/privacy}","received_events_url":"https://api.github.com/users/forkbot/received_events","type":"User","site_admin":false},"body":"Automatically
+        opened by http://forkbomb.io","created_at":"2013-12-17T15:17:40Z","updated_at":"2013-12-17T15:17:40Z","closed_at":null,"merged_at":null,"merge_commit_sha":"969bceb3709688f5021c73acb6313f402aebed0b","assignee":null,"milestone":null,"commits_url":"https://github.com/Floppy/such-travis/pull/5/commits","review_comments_url":"https://github.com/Floppy/such-travis/pull/5/comments","review_comment_url":"/repos/Floppy/such-travis/pulls/comments/{number}","comments_url":"https://api.github.com/repos/Floppy/such-travis/issues/5/comments","statuses_url":"https://api.github.com/repos/Floppy/such-travis/statuses/a6c0aa78b76980947eeec491b564bf5b748c4574","head":{"label":"theodi:master","ref":"master","sha":"a6c0aa78b76980947eeec491b564bf5b748c4574","user":{"login":"theodi","id":2492770,"avatar_url":"https://gravatar.com/avatar/07ab537732bae0cb3167a3bd8f42f885?d=https%3A%2F%2Fidenticons.github.com%2F8c3ce638034d7d23f1ffb32d423fc1f7.png&r=x","gravatar_id":"07ab537732bae0cb3167a3bd8f42f885","url":"https://api.github.com/users/theodi","html_url":"https://github.com/theodi","followers_url":"https://api.github.com/users/theodi/followers","following_url":"https://api.github.com/users/theodi/following{/other_user}","gists_url":"https://api.github.com/users/theodi/gists{/gist_id}","starred_url":"https://api.github.com/users/theodi/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/theodi/subscriptions","organizations_url":"https://api.github.com/users/theodi/orgs","repos_url":"https://api.github.com/users/theodi/repos","events_url":"https://api.github.com/users/theodi/events{/privacy}","received_events_url":"https://api.github.com/users/theodi/received_events","type":"Organization","site_admin":false},"repo":{"id":15252879,"name":"such-travis","full_name":"theodi/such-travis","owner":{"login":"theodi","id":2492770,"avatar_url":"https://gravatar.com/avatar/07ab537732bae0cb3167a3bd8f42f885?d=https%3A%2F%2Fidenticons.github.com%2F8c3ce638034d7d23f1ffb32d423fc1f7.png&r=x","gravatar_id":"07ab537732bae0cb3167a3bd8f42f885","url":"https://api.github.com/users/theodi","html_url":"https://github.com/theodi","followers_url":"https://api.github.com/users/theodi/followers","following_url":"https://api.github.com/users/theodi/following{/other_user}","gists_url":"https://api.github.com/users/theodi/gists{/gist_id}","starred_url":"https://api.github.com/users/theodi/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/theodi/subscriptions","organizations_url":"https://api.github.com/users/theodi/orgs","repos_url":"https://api.github.com/users/theodi/repos","events_url":"https://api.github.com/users/theodi/events{/privacy}","received_events_url":"https://api.github.com/users/theodi/received_events","type":"Organization","site_admin":false},"private":false,"html_url":"https://github.com/theodi/such-travis","description":"","fork":false,"url":"https://api.github.com/repos/theodi/such-travis","forks_url":"https://api.github.com/repos/theodi/such-travis/forks","keys_url":"https://api.github.com/repos/theodi/such-travis/keys{/key_id}","collaborators_url":"https://api.github.com/repos/theodi/such-travis/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/theodi/such-travis/teams","hooks_url":"https://api.github.com/repos/theodi/such-travis/hooks","issue_events_url":"https://api.github.com/repos/theodi/such-travis/issues/events{/number}","events_url":"https://api.github.com/repos/theodi/such-travis/events","assignees_url":"https://api.github.com/repos/theodi/such-travis/assignees{/user}","branches_url":"https://api.github.com/repos/theodi/such-travis/branches{/branch}","tags_url":"https://api.github.com/repos/theodi/such-travis/tags","blobs_url":"https://api.github.com/repos/theodi/such-travis/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/theodi/such-travis/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/theodi/such-travis/git/refs{/sha}","trees_url":"https://api.github.com/repos/theodi/such-travis/git/trees{/sha}","statuses_url":"https://api.github.com/repos/theodi/such-travis/statuses/{sha}","languages_url":"https://api.github.com/repos/theodi/such-travis/languages","stargazers_url":"https://api.github.com/repos/theodi/such-travis/stargazers","contributors_url":"https://api.github.com/repos/theodi/such-travis/contributors","subscribers_url":"https://api.github.com/repos/theodi/such-travis/subscribers","subscription_url":"https://api.github.com/repos/theodi/such-travis/subscription","commits_url":"https://api.github.com/repos/theodi/such-travis/commits{/sha}","git_commits_url":"https://api.github.com/repos/theodi/such-travis/git/commits{/sha}","comments_url":"https://api.github.com/repos/theodi/such-travis/comments{/number}","issue_comment_url":"https://api.github.com/repos/theodi/such-travis/issues/comments/{number}","contents_url":"https://api.github.com/repos/theodi/such-travis/contents/{+path}","compare_url":"https://api.github.com/repos/theodi/such-travis/compare/{base}...{head}","merges_url":"https://api.github.com/repos/theodi/such-travis/merges","archive_url":"https://api.github.com/repos/theodi/such-travis/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/theodi/such-travis/downloads","issues_url":"https://api.github.com/repos/theodi/such-travis/issues{/number}","pulls_url":"https://api.github.com/repos/theodi/such-travis/pulls{/number}","milestones_url":"https://api.github.com/repos/theodi/such-travis/milestones{/number}","notifications_url":"https://api.github.com/repos/theodi/such-travis/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/theodi/such-travis/labels{/name}","releases_url":"https://api.github.com/repos/theodi/such-travis/releases{/id}","created_at":"2013-12-17T11:34:41Z","updated_at":"2013-12-17T15:17:40Z","pushed_at":"2013-12-17T14:54:00Z","git_url":"git://github.com/theodi/such-travis.git","ssh_url":"git@github.com:theodi/such-travis.git","clone_url":"https://github.com/theodi/such-travis.git","svn_url":"https://github.com/theodi/such-travis","homepage":null,"size":80,"stargazers_count":0,"watchers_count":0,"language":"Ruby","has_issues":true,"has_downloads":true,"has_wiki":true,"forks_count":1,"mirror_url":null,"open_issues_count":0,"forks":1,"open_issues":0,"watchers":0,"default_branch":"master","master_branch":"master"}},"base":{"label":"Floppy:master","ref":"master","sha":"72b6bf50ee49848073e1bcf78b157a999dbe121a","user":{"login":"Floppy","id":3565,"avatar_url":"https://gravatar.com/avatar/c150a49c7709fa40bffca545ecf8942d?d=https%3A%2F%2Fidenticons.github.com%2Fe6e713296627dff6475085cc6a224464.png&r=x","gravatar_id":"c150a49c7709fa40bffca545ecf8942d","url":"https://api.github.com/users/Floppy","html_url":"https://github.com/Floppy","followers_url":"https://api.github.com/users/Floppy/followers","following_url":"https://api.github.com/users/Floppy/following{/other_user}","gists_url":"https://api.github.com/users/Floppy/gists{/gist_id}","starred_url":"https://api.github.com/users/Floppy/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/Floppy/subscriptions","organizations_url":"https://api.github.com/users/Floppy/orgs","repos_url":"https://api.github.com/users/Floppy/repos","events_url":"https://api.github.com/users/Floppy/events{/privacy}","received_events_url":"https://api.github.com/users/Floppy/received_events","type":"User","site_admin":false},"repo":{"id":15253182,"name":"such-travis","full_name":"Floppy/such-travis","owner":{"login":"Floppy","id":3565,"avatar_url":"https://gravatar.com/avatar/c150a49c7709fa40bffca545ecf8942d?d=https%3A%2F%2Fidenticons.github.com%2Fe6e713296627dff6475085cc6a224464.png&r=x","gravatar_id":"c150a49c7709fa40bffca545ecf8942d","url":"https://api.github.com/users/Floppy","html_url":"https://github.com/Floppy","followers_url":"https://api.github.com/users/Floppy/followers","following_url":"https://api.github.com/users/Floppy/following{/other_user}","gists_url":"https://api.github.com/users/Floppy/gists{/gist_id}","starred_url":"https://api.github.com/users/Floppy/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/Floppy/subscriptions","organizations_url":"https://api.github.com/users/Floppy/orgs","repos_url":"https://api.github.com/users/Floppy/repos","events_url":"https://api.github.com/users/Floppy/events{/privacy}","received_events_url":"https://api.github.com/users/Floppy/received_events","type":"User","site_admin":false},"private":false,"html_url":"https://github.com/Floppy/such-travis","description":"","fork":true,"url":"https://api.github.com/repos/Floppy/such-travis","forks_url":"https://api.github.com/repos/Floppy/such-travis/forks","keys_url":"https://api.github.com/repos/Floppy/such-travis/keys{/key_id}","collaborators_url":"https://api.github.com/repos/Floppy/such-travis/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/Floppy/such-travis/teams","hooks_url":"https://api.github.com/repos/Floppy/such-travis/hooks","issue_events_url":"https://api.github.com/repos/Floppy/such-travis/issues/events{/number}","events_url":"https://api.github.com/repos/Floppy/such-travis/events","assignees_url":"https://api.github.com/repos/Floppy/such-travis/assignees{/user}","branches_url":"https://api.github.com/repos/Floppy/such-travis/branches{/branch}","tags_url":"https://api.github.com/repos/Floppy/such-travis/tags","blobs_url":"https://api.github.com/repos/Floppy/such-travis/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/Floppy/such-travis/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/Floppy/such-travis/git/refs{/sha}","trees_url":"https://api.github.com/repos/Floppy/such-travis/git/trees{/sha}","statuses_url":"https://api.github.com/repos/Floppy/such-travis/statuses/{sha}","languages_url":"https://api.github.com/repos/Floppy/such-travis/languages","stargazers_url":"https://api.github.com/repos/Floppy/such-travis/stargazers","contributors_url":"https://api.github.com/repos/Floppy/such-travis/contributors","subscribers_url":"https://api.github.com/repos/Floppy/such-travis/subscribers","subscription_url":"https://api.github.com/repos/Floppy/such-travis/subscription","commits_url":"https://api.github.com/repos/Floppy/such-travis/commits{/sha}","git_commits_url":"https://api.github.com/repos/Floppy/such-travis/git/commits{/sha}","comments_url":"https://api.github.com/repos/Floppy/such-travis/comments{/number}","issue_comment_url":"https://api.github.com/repos/Floppy/such-travis/issues/comments/{number}","contents_url":"https://api.github.com/repos/Floppy/such-travis/contents/{+path}","compare_url":"https://api.github.com/repos/Floppy/such-travis/compare/{base}...{head}","merges_url":"https://api.github.com/repos/Floppy/such-travis/merges","archive_url":"https://api.github.com/repos/Floppy/such-travis/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/Floppy/such-travis/downloads","issues_url":"https://api.github.com/repos/Floppy/such-travis/issues{/number}","pulls_url":"https://api.github.com/repos/Floppy/such-travis/pulls{/number}","milestones_url":"https://api.github.com/repos/Floppy/such-travis/milestones{/number}","notifications_url":"https://api.github.com/repos/Floppy/such-travis/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/Floppy/such-travis/labels{/name}","releases_url":"https://api.github.com/repos/Floppy/such-travis/releases{/id}","created_at":"2013-12-17T11:52:20Z","updated_at":"2013-12-17T11:52:21Z","pushed_at":"2013-12-17T11:45:57Z","git_url":"git://github.com/Floppy/such-travis.git","ssh_url":"git@github.com:Floppy/such-travis.git","clone_url":"https://github.com/Floppy/such-travis.git","svn_url":"https://github.com/Floppy/such-travis","homepage":null,"size":80,"stargazers_count":0,"watchers_count":0,"language":"Ruby","has_issues":false,"has_downloads":true,"has_wiki":true,"forks_count":0,"mirror_url":null,"open_issues_count":1,"forks":0,"open_issues":1,"watchers":0,"default_branch":"master","master_branch":"master"}},"_links":{"self":{"href":"https://api.github.com/repos/Floppy/such-travis/pulls/5"},"html":{"href":"https://github.com/Floppy/such-travis/pull/5"},"issue":{"href":"https://api.github.com/repos/Floppy/such-travis/issues/5"},"comments":{"href":"https://api.github.com/repos/Floppy/such-travis/issues/5/comments"},"review_comments":{"href":"https://api.github.com/repos/Floppy/such-travis/pulls/5/comments"},"statuses":{"href":"https://api.github.com/repos/Floppy/such-travis/statuses/a6c0aa78b76980947eeec491b564bf5b748c4574"}}}]'
+    http_version: 
+  recorded_at: Tue, 17 Dec 2013 15:17:41 GMT
+- request:
+    method: patch
+    uri: https://api.github.com/repos/Floppy/such-travis/pulls/5?access_token=<FORKBOMB_GITHUB_OAUTH_TOKEN>
+    body:
+      encoding: UTF-8
+      string: '{"state":"closed"}'
+    headers:
+      Accept:
+      - application/vnd.github.v3+json,application/vnd.github.beta+json;q=0.5,application/json;q=0.1
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - Github Ruby Gem 0.11.1
+      Content-Type:
+      - application/json
+      Authorization:
+      - Token token="<FORKBOMB_GITHUB_OAUTH_TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Tue, 17 Dec 2013 15:17:42 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4884'
+      X-Ratelimit-Reset:
+      - '1387294863'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Etag:
+      - '"4a6001fdfb8e4488be9cb9e4da9a566e"'
+      X-Oauth-Scopes:
+      - user, public_repo, repo, gist
+      X-Accepted-Oauth-Scopes:
+      - repo, repo:status, repo:deployment, public_repo, delete_repo, user, user:email,
+        user:follow, admin:org, write:org, read:org, gist, site_admin, user:assets,
+        user:assets:read
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - '*'
+      X-Github-Request-Id:
+      - 569C372E:2C4D:88949B8:52B06B15
+    body:
+      encoding: UTF-8
+      string: '{"url":"https://api.github.com/repos/Floppy/such-travis/pulls/5","id":10898041,"html_url":"https://github.com/Floppy/such-travis/pull/5","diff_url":"https://github.com/Floppy/such-travis/pull/5.diff","patch_url":"https://github.com/Floppy/such-travis/pull/5.patch","issue_url":"https://github.com/Floppy/such-travis/pull/5","number":5,"state":"closed","title":"Upstream
+        changes","user":{"login":"forkbot","id":6198419,"avatar_url":"https://gravatar.com/avatar/7df8109a6e65965c5723dee7be63a769?d=https%3A%2F%2Fidenticons.github.com%2Fc704ac6c30452026307452d18c1614cd.png&r=x","gravatar_id":"7df8109a6e65965c5723dee7be63a769","url":"https://api.github.com/users/forkbot","html_url":"https://github.com/forkbot","followers_url":"https://api.github.com/users/forkbot/followers","following_url":"https://api.github.com/users/forkbot/following{/other_user}","gists_url":"https://api.github.com/users/forkbot/gists{/gist_id}","starred_url":"https://api.github.com/users/forkbot/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/forkbot/subscriptions","organizations_url":"https://api.github.com/users/forkbot/orgs","repos_url":"https://api.github.com/users/forkbot/repos","events_url":"https://api.github.com/users/forkbot/events{/privacy}","received_events_url":"https://api.github.com/users/forkbot/received_events","type":"User","site_admin":false},"body":"Automatically
+        opened by http://forkbomb.io","created_at":"2013-12-17T15:17:40Z","updated_at":"2013-12-17T15:17:42Z","closed_at":"2013-12-17T15:17:42Z","merged_at":null,"merge_commit_sha":"969bceb3709688f5021c73acb6313f402aebed0b","assignee":null,"milestone":null,"commits_url":"https://github.com/Floppy/such-travis/pull/5/commits","review_comments_url":"https://github.com/Floppy/such-travis/pull/5/comments","review_comment_url":"/repos/Floppy/such-travis/pulls/comments/{number}","comments_url":"https://api.github.com/repos/Floppy/such-travis/issues/5/comments","statuses_url":"https://api.github.com/repos/Floppy/such-travis/statuses/a6c0aa78b76980947eeec491b564bf5b748c4574","head":{"label":"theodi:master","ref":"master","sha":"a6c0aa78b76980947eeec491b564bf5b748c4574","user":{"login":"theodi","id":2492770,"avatar_url":"https://gravatar.com/avatar/07ab537732bae0cb3167a3bd8f42f885?d=https%3A%2F%2Fidenticons.github.com%2F8c3ce638034d7d23f1ffb32d423fc1f7.png&r=x","gravatar_id":"07ab537732bae0cb3167a3bd8f42f885","url":"https://api.github.com/users/theodi","html_url":"https://github.com/theodi","followers_url":"https://api.github.com/users/theodi/followers","following_url":"https://api.github.com/users/theodi/following{/other_user}","gists_url":"https://api.github.com/users/theodi/gists{/gist_id}","starred_url":"https://api.github.com/users/theodi/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/theodi/subscriptions","organizations_url":"https://api.github.com/users/theodi/orgs","repos_url":"https://api.github.com/users/theodi/repos","events_url":"https://api.github.com/users/theodi/events{/privacy}","received_events_url":"https://api.github.com/users/theodi/received_events","type":"Organization","site_admin":false},"repo":{"id":15252879,"name":"such-travis","full_name":"theodi/such-travis","owner":{"login":"theodi","id":2492770,"avatar_url":"https://gravatar.com/avatar/07ab537732bae0cb3167a3bd8f42f885?d=https%3A%2F%2Fidenticons.github.com%2F8c3ce638034d7d23f1ffb32d423fc1f7.png&r=x","gravatar_id":"07ab537732bae0cb3167a3bd8f42f885","url":"https://api.github.com/users/theodi","html_url":"https://github.com/theodi","followers_url":"https://api.github.com/users/theodi/followers","following_url":"https://api.github.com/users/theodi/following{/other_user}","gists_url":"https://api.github.com/users/theodi/gists{/gist_id}","starred_url":"https://api.github.com/users/theodi/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/theodi/subscriptions","organizations_url":"https://api.github.com/users/theodi/orgs","repos_url":"https://api.github.com/users/theodi/repos","events_url":"https://api.github.com/users/theodi/events{/privacy}","received_events_url":"https://api.github.com/users/theodi/received_events","type":"Organization","site_admin":false},"private":false,"html_url":"https://github.com/theodi/such-travis","description":"","fork":false,"url":"https://api.github.com/repos/theodi/such-travis","forks_url":"https://api.github.com/repos/theodi/such-travis/forks","keys_url":"https://api.github.com/repos/theodi/such-travis/keys{/key_id}","collaborators_url":"https://api.github.com/repos/theodi/such-travis/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/theodi/such-travis/teams","hooks_url":"https://api.github.com/repos/theodi/such-travis/hooks","issue_events_url":"https://api.github.com/repos/theodi/such-travis/issues/events{/number}","events_url":"https://api.github.com/repos/theodi/such-travis/events","assignees_url":"https://api.github.com/repos/theodi/such-travis/assignees{/user}","branches_url":"https://api.github.com/repos/theodi/such-travis/branches{/branch}","tags_url":"https://api.github.com/repos/theodi/such-travis/tags","blobs_url":"https://api.github.com/repos/theodi/such-travis/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/theodi/such-travis/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/theodi/such-travis/git/refs{/sha}","trees_url":"https://api.github.com/repos/theodi/such-travis/git/trees{/sha}","statuses_url":"https://api.github.com/repos/theodi/such-travis/statuses/{sha}","languages_url":"https://api.github.com/repos/theodi/such-travis/languages","stargazers_url":"https://api.github.com/repos/theodi/such-travis/stargazers","contributors_url":"https://api.github.com/repos/theodi/such-travis/contributors","subscribers_url":"https://api.github.com/repos/theodi/such-travis/subscribers","subscription_url":"https://api.github.com/repos/theodi/such-travis/subscription","commits_url":"https://api.github.com/repos/theodi/such-travis/commits{/sha}","git_commits_url":"https://api.github.com/repos/theodi/such-travis/git/commits{/sha}","comments_url":"https://api.github.com/repos/theodi/such-travis/comments{/number}","issue_comment_url":"https://api.github.com/repos/theodi/such-travis/issues/comments/{number}","contents_url":"https://api.github.com/repos/theodi/such-travis/contents/{+path}","compare_url":"https://api.github.com/repos/theodi/such-travis/compare/{base}...{head}","merges_url":"https://api.github.com/repos/theodi/such-travis/merges","archive_url":"https://api.github.com/repos/theodi/such-travis/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/theodi/such-travis/downloads","issues_url":"https://api.github.com/repos/theodi/such-travis/issues{/number}","pulls_url":"https://api.github.com/repos/theodi/such-travis/pulls{/number}","milestones_url":"https://api.github.com/repos/theodi/such-travis/milestones{/number}","notifications_url":"https://api.github.com/repos/theodi/such-travis/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/theodi/such-travis/labels{/name}","releases_url":"https://api.github.com/repos/theodi/such-travis/releases{/id}","created_at":"2013-12-17T11:34:41Z","updated_at":"2013-12-17T15:17:42Z","pushed_at":"2013-12-17T14:54:00Z","git_url":"git://github.com/theodi/such-travis.git","ssh_url":"git@github.com:theodi/such-travis.git","clone_url":"https://github.com/theodi/such-travis.git","svn_url":"https://github.com/theodi/such-travis","homepage":null,"size":80,"stargazers_count":0,"watchers_count":0,"language":"Ruby","has_issues":true,"has_downloads":true,"has_wiki":true,"forks_count":1,"mirror_url":null,"open_issues_count":0,"forks":1,"open_issues":0,"watchers":0,"default_branch":"master","master_branch":"master"}},"base":{"label":"Floppy:master","ref":"master","sha":"72b6bf50ee49848073e1bcf78b157a999dbe121a","user":{"login":"Floppy","id":3565,"avatar_url":"https://gravatar.com/avatar/c150a49c7709fa40bffca545ecf8942d?d=https%3A%2F%2Fidenticons.github.com%2Fe6e713296627dff6475085cc6a224464.png&r=x","gravatar_id":"c150a49c7709fa40bffca545ecf8942d","url":"https://api.github.com/users/Floppy","html_url":"https://github.com/Floppy","followers_url":"https://api.github.com/users/Floppy/followers","following_url":"https://api.github.com/users/Floppy/following{/other_user}","gists_url":"https://api.github.com/users/Floppy/gists{/gist_id}","starred_url":"https://api.github.com/users/Floppy/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/Floppy/subscriptions","organizations_url":"https://api.github.com/users/Floppy/orgs","repos_url":"https://api.github.com/users/Floppy/repos","events_url":"https://api.github.com/users/Floppy/events{/privacy}","received_events_url":"https://api.github.com/users/Floppy/received_events","type":"User","site_admin":false},"repo":{"id":15253182,"name":"such-travis","full_name":"Floppy/such-travis","owner":{"login":"Floppy","id":3565,"avatar_url":"https://gravatar.com/avatar/c150a49c7709fa40bffca545ecf8942d?d=https%3A%2F%2Fidenticons.github.com%2Fe6e713296627dff6475085cc6a224464.png&r=x","gravatar_id":"c150a49c7709fa40bffca545ecf8942d","url":"https://api.github.com/users/Floppy","html_url":"https://github.com/Floppy","followers_url":"https://api.github.com/users/Floppy/followers","following_url":"https://api.github.com/users/Floppy/following{/other_user}","gists_url":"https://api.github.com/users/Floppy/gists{/gist_id}","starred_url":"https://api.github.com/users/Floppy/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/Floppy/subscriptions","organizations_url":"https://api.github.com/users/Floppy/orgs","repos_url":"https://api.github.com/users/Floppy/repos","events_url":"https://api.github.com/users/Floppy/events{/privacy}","received_events_url":"https://api.github.com/users/Floppy/received_events","type":"User","site_admin":false},"private":false,"html_url":"https://github.com/Floppy/such-travis","description":"","fork":true,"url":"https://api.github.com/repos/Floppy/such-travis","forks_url":"https://api.github.com/repos/Floppy/such-travis/forks","keys_url":"https://api.github.com/repos/Floppy/such-travis/keys{/key_id}","collaborators_url":"https://api.github.com/repos/Floppy/such-travis/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/Floppy/such-travis/teams","hooks_url":"https://api.github.com/repos/Floppy/such-travis/hooks","issue_events_url":"https://api.github.com/repos/Floppy/such-travis/issues/events{/number}","events_url":"https://api.github.com/repos/Floppy/such-travis/events","assignees_url":"https://api.github.com/repos/Floppy/such-travis/assignees{/user}","branches_url":"https://api.github.com/repos/Floppy/such-travis/branches{/branch}","tags_url":"https://api.github.com/repos/Floppy/such-travis/tags","blobs_url":"https://api.github.com/repos/Floppy/such-travis/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/Floppy/such-travis/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/Floppy/such-travis/git/refs{/sha}","trees_url":"https://api.github.com/repos/Floppy/such-travis/git/trees{/sha}","statuses_url":"https://api.github.com/repos/Floppy/such-travis/statuses/{sha}","languages_url":"https://api.github.com/repos/Floppy/such-travis/languages","stargazers_url":"https://api.github.com/repos/Floppy/such-travis/stargazers","contributors_url":"https://api.github.com/repos/Floppy/such-travis/contributors","subscribers_url":"https://api.github.com/repos/Floppy/such-travis/subscribers","subscription_url":"https://api.github.com/repos/Floppy/such-travis/subscription","commits_url":"https://api.github.com/repos/Floppy/such-travis/commits{/sha}","git_commits_url":"https://api.github.com/repos/Floppy/such-travis/git/commits{/sha}","comments_url":"https://api.github.com/repos/Floppy/such-travis/comments{/number}","issue_comment_url":"https://api.github.com/repos/Floppy/such-travis/issues/comments/{number}","contents_url":"https://api.github.com/repos/Floppy/such-travis/contents/{+path}","compare_url":"https://api.github.com/repos/Floppy/such-travis/compare/{base}...{head}","merges_url":"https://api.github.com/repos/Floppy/such-travis/merges","archive_url":"https://api.github.com/repos/Floppy/such-travis/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/Floppy/such-travis/downloads","issues_url":"https://api.github.com/repos/Floppy/such-travis/issues{/number}","pulls_url":"https://api.github.com/repos/Floppy/such-travis/pulls{/number}","milestones_url":"https://api.github.com/repos/Floppy/such-travis/milestones{/number}","notifications_url":"https://api.github.com/repos/Floppy/such-travis/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/Floppy/such-travis/labels{/name}","releases_url":"https://api.github.com/repos/Floppy/such-travis/releases{/id}","created_at":"2013-12-17T11:52:20Z","updated_at":"2013-12-17T11:52:21Z","pushed_at":"2013-12-17T11:45:57Z","git_url":"git://github.com/Floppy/such-travis.git","ssh_url":"git@github.com:Floppy/such-travis.git","clone_url":"https://github.com/Floppy/such-travis.git","svn_url":"https://github.com/Floppy/such-travis","homepage":null,"size":80,"stargazers_count":0,"watchers_count":0,"language":"Ruby","has_issues":false,"has_downloads":true,"has_wiki":true,"forks_count":0,"mirror_url":null,"open_issues_count":0,"forks":0,"open_issues":0,"watchers":0,"default_branch":"master","master_branch":"master"}},"_links":{"self":{"href":"https://api.github.com/repos/Floppy/such-travis/pulls/5"},"html":{"href":"https://github.com/Floppy/such-travis/pull/5"},"issue":{"href":"https://api.github.com/repos/Floppy/such-travis/issues/5"},"comments":{"href":"https://api.github.com/repos/Floppy/such-travis/issues/5/comments"},"review_comments":{"href":"https://api.github.com/repos/Floppy/such-travis/pulls/5/comments"},"statuses":{"href":"https://api.github.com/repos/Floppy/such-travis/statuses/a6c0aa78b76980947eeec491b564bf5b748c4574"}},"merged":false,"mergeable":true,"mergeable_state":"clean","merged_by":null,"comments":0,"review_comments":0,"commits":23,"additions":11,"deletions":14,"changed_files":6}'
+    http_version: 
+  recorded_at: Tue, 17 Dec 2013 15:17:42 GMT
+recorded_with: VCR 2.8.0

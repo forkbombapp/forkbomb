@@ -32,6 +32,8 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+gem "github_api", '~> 0.11'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -53,10 +55,14 @@ group :development, :test do
   gem 'guard-cucumber'
 end
 
+group :test do
+  gem 'webmock'
+  gem 'vcr'
+end
+
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-github'
-gem 'github_api'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
