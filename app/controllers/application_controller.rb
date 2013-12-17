@@ -7,10 +7,6 @@ class ApplicationController < ActionController::Base
     '/repos'
   end
   
-  def github
-    Github.new :oauth_token => ENV['FORKBOMB_GITHUB_OAUTH_TOKEN']
-  end
-  
   def index
   end
 end
