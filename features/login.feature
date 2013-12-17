@@ -1,3 +1,4 @@
+@vcr
 Feature: Github login
 
   As a user

@@ -46,7 +46,8 @@ group :development, :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'coveralls', require: false
-
+  gem 'vcr'
+  gem 'webmock'
   gem 'guard'
   gem 'guard-rspec', require: false
   gem 'guard-cucumber'

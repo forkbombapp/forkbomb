@@ -1,3 +1,4 @@
+@vcr
 Feature: Manage forks
   
   As a user
