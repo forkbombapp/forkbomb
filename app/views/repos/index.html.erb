@@ -1,0 +1,5 @@
+<%= render partial: 'list', locals: { user: @github_user, repos: @user_repos } %>
+
+<% @orgs.each do |org| %>
+  <%= render partial: 'list', locals: { user: org, repos: @org_repos[org.login] } %>
+<% end %>
