@@ -52,6 +52,9 @@ group :development, :test do
   gem 'guard'
   gem 'guard-rspec', require: false
   gem 'guard-cucumber'
+
+  gem 'webmock'
+  gem 'vcr'
 end
 
 # Use ActiveModel has_secure_password
