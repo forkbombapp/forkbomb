@@ -7,6 +7,11 @@ class ApplicationController < ActionController::Base
     '/repos'
   end
   
+  def sign_out
+    reset_session
+    redirect_to root_url, :notice => 'Signed out!'
+  end
+  
   def index
   end
 end
