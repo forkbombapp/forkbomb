@@ -1,5 +1,6 @@
 Given(/^my github email is "(.*?)"$/) do |email|
   @github_email = email
+  mock_login(email)
 end
 
 Given(/^I click login$/) do
@@ -12,5 +13,5 @@ Then(/^I should see a successful signin message$/) do
 end
 
 Then(/^my email should exist in the database$/) do
-  User.find_by_email(@github_email).count.should == 1
+  User.where(:email => @github_email).count.should == 1
 end
