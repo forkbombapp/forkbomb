@@ -19,5 +19,5 @@
 
 /coverage/
 
+/.env
 .idea
-.env
