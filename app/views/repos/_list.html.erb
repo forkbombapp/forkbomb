@@ -1,0 +1,11 @@
+<h2><%= image_tag user.avatar_url %> <%= user.login %></h2>
+
+<% if repos.count == 0%>
+  <p>No forks here!</p>
+<% else %>
+  <ul class="<%= user.login %>">
+  <% repos.each do |repo| %>
+    <li><%= repo.name  %></li>
+  <% end %>
+  </ul>
+<% end %>
