@@ -26,4 +26,11 @@ before_install:
 after_script:
 - bundle_cache
 notifications:
-  irc: "irc.freenode.net#theodi"
+  irc:
+    channels:
+      - "irc.freenode.net#theodi"
+    template:
+      - "%{repository} %{branch}: %{message} %{build_url}"
+    on_success: change
+    on_failure: always
+    use_notice: true
