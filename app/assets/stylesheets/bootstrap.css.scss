@@ -1,5 +1,36 @@
 // Customise colours and things here
 
+// Grays
+// -------------------------
+
+$gray-darker:            lighten(#000, 13.5%); // #222
+$gray-dark:              #5f5e66; // #333
+$gray:                   #94837d; // #555
+$gray-light:             #a79ea0; // #999
+$gray-lighter:           #e3c8b5; // #eee
+
+// Brand colors
+// -------------------------
+
+$brand-primary:         #b95d40;
+$brand-success:         #5cb85c;
+$brand-warning:         #f0ad4e;
+$brand-danger:          #d9534f;
+$brand-info:            #5bc0de;
+
+// Scaffolding
+// -------------------------
+
+$body-bg:               #e2dcd8;
+$text-color:            $gray-dark;
+
+// Links
+// -------------------------
+
+$link-color:            $brand-primary;
+$link-hover-color:      darken($link-color, 15%);
+
+
 
 // Core variables and mixins
 @import "bootstrap/variables";
