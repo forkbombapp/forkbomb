@@ -43,21 +43,16 @@ group :development do
   gem 'travis'
 end
 
-group :development, :test do
+group :test do
+  gem 'webmock'
+  gem 'vcr'
   gem 'rspec-rails'
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'coveralls', require: false
-  gem 'vcr'
-  gem 'webmock'
   gem 'guard'
   gem 'guard-rspec', require: false
   gem 'guard-cucumber'
-end
-
-group :test do
-  gem 'webmock'
-  gem 'vcr'
 end
 
 gem 'devise'
