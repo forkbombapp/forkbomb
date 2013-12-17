@@ -13,11 +13,37 @@
 </head>
 <body>
   
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Forkbomb</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <%= link_to "Sign in", user_omniauth_authorize_path(:github), class: "btn btn-default navbar-btn navbar-right", role: "button" %>
+      </div><!--/.navbar-collapse -->
+    </div>
+  </div>
+
   <% if flash[:notice] %>
-    <div class="notice"><%= flash[:notice] %></div>
+    <div class="container">
+      <div class="notice"><%= flash[:notice] %></div>
+    </div>
   <% end %>
 
-<%= yield %>
+  <div class="container">
+
+    <%= yield %>
+
+    <footer>
+      <p>An <%= link_to 'Open Data Institute', 'http://theodi.org' %> Experiment.</p>
+    </footer>
+  </div>
 
 </body>
 </html>

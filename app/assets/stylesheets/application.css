@@ -12,3 +12,6 @@
  *= require 'bootstrap.css'
  *= require_tree .
  */
+
+/* avoid top navbar */ 
+body { padding-top: 70px; }
