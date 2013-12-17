@@ -1,1 +1,10 @@
-<%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %>
+<div class="jumbotron">
+  <div class="container">
+    <h1>Forkbomb</h1>
+    <p>Ease the pain of maintaining long-running GitHub forks.</p>
+    <p>
+      <%= link_to "Get Started", user_omniauth_authorize_path(:github), class: "btn btn-primary btn-lg", role: "button" %>
+    </p>
+  </div>
+</div>
+

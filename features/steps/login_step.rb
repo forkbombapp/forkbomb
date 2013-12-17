@@ -9,7 +9,7 @@ end
 Given(/^I click login$/) do
   mock_login(@github_email, @github_username)
   visit('/')
-  click_link('Sign in with Github')
+  click_link('Sign in')
 end
 
 Then(/^I should see a successful signin message$/) do
