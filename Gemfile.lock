@@ -91,6 +91,8 @@ GEM
     faraday_middleware (0.9.0)
       faraday (>= 0.7.4, < 0.9)
     ffi (1.9.3)
+    font-awesome-rails (4.0.3.0)
+      railties (>= 3.2, < 5.0)
     formatador (0.2.4)
     gh (0.13.0)
       addressable
@@ -295,6 +297,7 @@ DEPENDENCIES
   database_cleaner
   devise
   dotenv-rails
+  font-awesome-rails
   github_api (~> 0.11)
   guard
   guard-cucumber
