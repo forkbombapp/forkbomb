@@ -52,7 +52,9 @@ group :development, :test do
   gem 'guard'
   gem 'guard-rspec', require: false
   gem 'guard-cucumber'
+end
 
+group :test do
   gem 'webmock'
   gem 'vcr'
 end
