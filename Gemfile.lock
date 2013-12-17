@@ -67,6 +67,9 @@ GEM
     descendants_tracker (0.0.3)
     diff-lcs (1.2.5)
     docile (1.1.1)
+    dotenv (0.9.0)
+    dotenv-rails (0.9.0)
+      dotenv (= 0.9.0)
     erubis (2.7.0)
     ethon (0.6.1)
       ffi (>= 1.3.0)
@@ -262,6 +265,7 @@ DEPENDENCIES
   coveralls
   cucumber-rails
   database_cleaner
+  dotenv-rails
   github_api (~> 0.11)
   guard
   guard-cucumber
