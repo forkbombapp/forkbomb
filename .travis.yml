@@ -1,10 +1,13 @@
-language: ruby
-rvm:
-- 2.0.0
-after_success: 
-- '[ "$TRAVIS_BRANCH" == "master" ] && curl -v -X DELETE -u $GITHUB_USER:$GITHUB_PASSWORD "https://api.github.com/repos/$TRAVIS_REPO_SLUG/git/refs/tags/CURRENT"'
-- '[ "$TRAVIS_BRANCH" == "master" ] && curl -v -X POST -d "{''ref'': ''refs/tags/CURRENT'',''sha'': ''$TRAVIS_COMMIT''}" --header "Content-Type:application/json" -u $GITHUB_USER:$GITHUB_PASSWORD "https://api.github.com/repos/$TRAVIS_REPO_SLUG/git/refs"'
+---
+after_success:
+  - "[ \"$TRAVIS_BRANCH\" == \"master\" ] && curl -v -X DELETE -u $GITHUB_USER:$GITHUB_PASSWORD \"https://api.github.com/repos/$TRAVIS_REPO_SLUG/git/refs/tags/CURRENT\""
+  - "JSON='{\"ref\": \"refs/tags/CURRENT\", \"sha\": \"$TRAVIS_COMMIT\"}' ; [ \"$TRAVIS_BRANCH\" == \"master\" ] && curl -v -X POST -d ${JSON} --header \"Content-Type:application/json\" -u $GITHUB_USER:$GITHUB_PASSWORD \"https://api.github.com/repos/$TRAVIS_REPO_SLUG/git/refs\""
 env:
   global:
-  - secure: KXYMCHWpbkfdIo25rfsq4DFyqBbSFaSXW1DYSpWhYA0rGxjZVdQ2l+1y0yqP9HCf1wrjYTJZfb5c35khKBBWPFzRas3HAqh6LGx/TynbVV7SjyiR2gmM1q3WBUiH2qCqJUoGgnY+0RCpPwKuYJNBHfcsZ7mBbnUOepcbkSqNl6U=
-  - secure: RvFgRVnmls0mJx/szHgroW2W9nmXGPTl8U6D6GA9lqNh+dmXYkFLY+WlZT3hnW5twrAw+mJgoLBJBXPVWDluFVrVClIdePk4bXfJOE3+lfvSVAYlntLXBJAeQGgmII5VLmBfzXApXK9OugCdADvmqj7K9BWZGvx67VTD+bZtp8U=
+    -
+      secure: KXYMCHWpbkfdIo25rfsq4DFyqBbSFaSXW1DYSpWhYA0rGxjZVdQ2l+1y0yqP9HCf1wrjYTJZfb5c35khKBBWPFzRas3HAqh6LGx/TynbVV7SjyiR2gmM1q3WBUiH2qCqJUoGgnY+0RCpPwKuYJNBHfcsZ7mBbnUOepcbkSqNl6U=
+    -
+      secure: RvFgRVnmls0mJx/szHgroW2W9nmXGPTl8U6D6GA9lqNh+dmXYkFLY+WlZT3hnW5twrAw+mJgoLBJBXPVWDluFVrVClIdePk4bXfJOE3+lfvSVAYlntLXBJAeQGgmII5VLmBfzXApXK9OugCdADvmqj7K9BWZGvx67VTD+bZtp8U=
+language: ruby
+rvm:
+  - "2.0.0"
