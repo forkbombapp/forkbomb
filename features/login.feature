@@ -6,6 +6,7 @@ Feature: Github login
   
   Scenario: Github Login
     Given my github email is "hello@example.com"
+    And my github username is "hello"
     And I click login
     Then I should see a successful signin message
-    And my email should exist in the database
+    And my email and username should be stored

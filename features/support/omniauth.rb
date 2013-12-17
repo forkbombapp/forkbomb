@@ -1,9 +1,9 @@
-def mock_login(email)
+def mock_login(email, username)
   OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
       :provider => 'github',
       :uid => '123456',
       :info => {
-        :nickname => 'test_user',
+        :nickname => username,
         :email => email
       },
       :credentials => {
@@ -12,7 +12,7 @@ def mock_login(email)
       },
       :extra => {
         :raw_info => {
-          :login => @github_username,
+          :login => username,
           :id => '123456',
           :name => "Mock Github user"
         }
