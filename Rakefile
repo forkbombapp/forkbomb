@@ -7,4 +7,4 @@ require 'coveralls/rake/task'
 Forkbomb::Application.load_tasks
 
 Coveralls::RakeTask.new
-task :default => [:spec, :features, 'coveralls:push']
+task :default => [:spec, :cucumber, 'coveralls:push']
