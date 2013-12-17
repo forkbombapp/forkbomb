@@ -17,8 +17,8 @@ class PullRequester
           base: branch
         )
       rescue Github::Error::UnprocessableEntity => ex
-        # absorb errors caused by already-open PRs
-        raise unless ex.message.include?("A pull request already exists")
+        # absorb errors caused by already-open PRs or zero-size PRs
+        raise unless ex.message.include?("A pull request already exists") || ex.message.include?("No commits between")
       end
 
     end
