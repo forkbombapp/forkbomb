@@ -14,7 +14,7 @@ Devise.setup do |config|
   config.reconfirmable = true
   config.password_length = 8..128
   config.reset_password_within = 6.hours
-  config.sign_out_via = :delete
+  config.sign_out_via = :get
 
   OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE if Rails.env.development? 
   config.omniauth :github, ENV['FORKBOMB_GITHUB_CLIENT_ID'], ENV['FORKBOMB_GITHUB_CLIENT_SECRET'], :scope => 'user,public_repo'  
