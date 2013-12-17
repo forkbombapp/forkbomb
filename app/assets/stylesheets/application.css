@@ -9,5 +9,9 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require 'bootstrap.css'
  *= require_tree .
  */
+
+/* avoid top navbar */ 
+body { padding-top: 70px; }

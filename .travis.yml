@@ -5,6 +5,11 @@ after_success:
   --header "Content-Type:application/json" -u $GITHUB_USER:$GITHUB_PASSWORD "https://api.github.com/repos/$TRAVIS_REPO_SLUG/git/refs"'
 env:
   global:
+  - BUNDLE_ARCHIVE="forkbomb"
+  - AWS_S3_BUCKET="theodi-travis-bundle-cache"
+  - AWS_S3_REGION="eu-west-1"
+  - RAILS_ENV=test
+  - secure: AgvXTDZdkWlbZ+hXYz/vwzZijN3Ss3zk5v889GqAbQVKBJoBqB24PjU4rf6/nCczxXPAYeZf6Blx6hkmLE9Wl/kBH6EhEkJFbi56MAM2kmskO7+gtWaFRv6olkXe3RPHN6rfU2bEmF+D7U/XsjzVDYgPZLRfe8bpYyiLcakct1Y=
   - secure: KXYMCHWpbkfdIo25rfsq4DFyqBbSFaSXW1DYSpWhYA0rGxjZVdQ2l+1y0yqP9HCf1wrjYTJZfb5c35khKBBWPFzRas3HAqh6LGx/TynbVV7SjyiR2gmM1q3WBUiH2qCqJUoGgnY+0RCpPwKuYJNBHfcsZ7mBbnUOepcbkSqNl6U=
   - secure: RvFgRVnmls0mJx/szHgroW2W9nmXGPTl8U6D6GA9lqNh+dmXYkFLY+WlZT3hnW5twrAw+mJgoLBJBXPVWDluFVrVClIdePk4bXfJOE3+lfvSVAYlntLXBJAeQGgmII5VLmBfzXApXK9OugCdADvmqj7K9BWZGvx67VTD+bZtp8U=
   - secure: ZGjK2q+H+ZosqWS57hVB1WVcizfx9UxFE8nsmIAJMXpd3e+5OhZrR1KynFgV6fmqSr5A5edMSRs37Xl0TYC4ZtvPSCI1b1lIFbhrId9WoCOYLxmw/rbpl7+mmCw/HX426sFh5AiwFiUUwbOlm9BDSxw1vdM2IFaX7CMCkWz4GGU=
@@ -13,3 +18,12 @@ env:
 language: ruby
 rvm:
 - 2.0.0
+bundler_args: --without development --path=~/.bundle
+before_install:
+- 'echo ''gem: --no-ri --no-rdoc'' > ~/.gemrc'
+- gem install bundler bundle_cache
+- bundle_cache_install
+after_script:
+- bundle_cache
+notifications:
+  irc: "irc.freenode.net#theodi"
