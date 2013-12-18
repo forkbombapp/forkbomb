@@ -25,7 +25,11 @@
         <a class="navbar-brand" href="#">Forkbomb</a>
       </div>
       <div class="navbar-collapse collapse">
-        <%= link_to "Sign in", user_omniauth_authorize_path(:github), class: "btn btn-default navbar-btn navbar-right", role: "button" %>
+        <% if current_user %>
+          <%= link_to "Sign out", sign_out_path, class: "btn btn-default navbar-btn navbar-right", role: "button" %>
+        <% else %>
+          <%= link_to "Sign in", user_omniauth_authorize_path(:github), class: "btn btn-default navbar-btn navbar-right", role: "button" %>
+        <% end %>
       </div><!--/.navbar-collapse -->
     </div>
   </div>
