@@ -25,13 +25,20 @@ class ForkController < ApplicationController
   def update
     if current_user
       fork = Fork.where(
-                :repo_name => params[:fork]["repo_name"],
-                :user      => params[:fork]["user"]
+                :repo_name => params[:fork][:repo_name],
+                :user      => params[:fork][:user]
               ).first
-              
-      params.delete(:repo_name, :user)
-              
-      fork.update_attributes(params[:fork])
+      
+      # Set update frequency to nil if repo is deactivated
+      params[:fork][:update_frequency] = nil if params[:fork][:active] == "0"
+                      
+      fork.update_attributes(params[:fork].permit(:active, :update_frequency))
+      
+      if fork.valid?
+        render json: fork, status: :created, location: fork
+      else
+        render json: fork.errors, status: :unprocessable_entity
+      end
     end
   end
   
