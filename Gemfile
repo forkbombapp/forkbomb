@@ -60,6 +60,7 @@ group :test do
   gem 'guard-cucumber'
   gem 'timecop'
   gem 'poltergeist'
+  gem 'factory_girl_rails'
 end
 
 # heroku gems

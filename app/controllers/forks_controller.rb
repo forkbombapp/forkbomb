@@ -1,4 +1,4 @@
-class ForkController < ApplicationController
+class ForksController < ApplicationController
   
   def index
     if current_user
@@ -15,7 +15,7 @@ class ForkController < ApplicationController
         @org_repos[org.login] = Fork.get_for_user(org)
       end
       
-      render 'fork/index'
+      render 'forks/index'
     else
       flash[:notice] = "You must be logged in to access this page"
       redirect_to('/')
@@ -39,6 +39,17 @@ class ForkController < ApplicationController
       else
         render json: fork.errors, status: :unprocessable_entity
       end
+    end
+  end
+  
+  def show
+    @fork = Fork.find_by_repo_path(params[:id])
+  end
+
+  def badge
+    @fork = Fork.find_by_repo_path(params[:fork_id])
+    respond_to do |wants|
+      wants.png { send_file File.join(Rails.root, 'app', 'views', 'forks', (@fork.current? ? 'current.png' : 'outdated.png')), disposition: 'inline' }
     end
   end
   
