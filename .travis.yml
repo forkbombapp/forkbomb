@@ -29,3 +29,5 @@ notifications:
   irc:
     channels:
       - "irc.freenode.net#theodi"
+    template:
+      - "%{repository} %{branch}: %{message} %{build_url}"
