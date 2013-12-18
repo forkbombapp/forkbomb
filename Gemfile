@@ -8,9 +8,6 @@ gem 'rails', '~> 4.0.2'
 
 gem 'dotenv-rails'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -43,6 +40,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development, :test do
+  gem 'sqlite3'
+end
+
 group :development do
   gem 'travis'
 end
@@ -58,6 +59,12 @@ group :test do
   gem 'guard-rspec', require: false
   gem 'guard-cucumber'
   gem 'timecop'
+end
+
+# heroku gems
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
 end
 
 gem 'devise'
