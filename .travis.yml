@@ -34,3 +34,6 @@ deploy:
   app: forkbomb
   on:
     repo: theodi/forkbomb
+branches:
+  except:
+    - CURRENT
