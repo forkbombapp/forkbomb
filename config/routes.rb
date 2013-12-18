@@ -8,7 +8,7 @@ Forkbomb::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'application#index'
   
-  resources :forks, :except => [:create, :new, :destroy], constraints: {id: /[\w-]+\/[\w-]+/}
+  resources :forks, :except => [:create, :new, :destroy], constraints: {id: /[\w\-]+\/[\w\-\.]+/}
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

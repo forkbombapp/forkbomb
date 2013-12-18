@@ -6,6 +6,7 @@ describe "routes" do
 
   {
     "Floppy/such-travis"  => true,
+    "Floppy/such.travis"  => true,
     "Floppy/such-travis2" => true,
     "Flo_ppy/such_travis" => true,
     "Floppy/such/travis"  => false,
