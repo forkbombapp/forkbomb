@@ -1,0 +1,34 @@
+<h2><%= image_tag user.avatar_url %> <%= user.login %></h2>
+
+<% if repos.count == 0%>
+  <p>No forks here!</p>
+<% else %>
+  <table class="<%= user.login %> table table-condensed">
+    <tr>
+      <th scope="col">Repo</th>
+      <th scope="col">Status</th>
+      <th scope="col">Update every</th>
+    </tr>
+  <% repos.each do |repo| %>
+    <tr>
+      <td><%= repo.repo_name  %></td>
+      <td>
+        <%= form_for repo, remote: true do |f| %>
+        <div class="make-switch switch-mini status" data-on="primary">
+            <%= f.hidden_field :repo_name %>
+            <%= f.hidden_field :user %>
+            <%= f.check_box :active %>
+        </div>
+        <% end %>
+      </td>
+      <td>
+        <%= form_for repo, remote: true do |f| %>
+          <%= f.hidden_field :repo_name %>
+          <%= f.hidden_field :user %>
+          <%= f.select :update_frequency, {'Update Frequency' => nil, 'Daily' => 'daily', 'Weekly' => 'weekly', 'Monthly' => 'monthly'}, {}, :disabled => true %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+<% end %>
