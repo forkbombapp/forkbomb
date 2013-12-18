@@ -3,5 +3,7 @@ Then(/^I should be redirected to the repos page$/) do
 end
 
 Then(/^I should see (.*?) forks under "(.*?)"$/) do |count, user|
-  page.all("ul.#{user} li").count.should == count.to_i
+  count = count.to_i
+  count = count + 1 if count > 0 # header
+  page.all("table.#{user} tr").count.should == count
 end
