@@ -1,5 +1,5 @@
 Then(/^I should be redirected to the repos page$/) do
-  current_path.should == '/fork'
+  current_path.should == '/forks'
 end
 
 Then(/^I should see (.*?) forks under "(.*?)"$/) do |count, user|
