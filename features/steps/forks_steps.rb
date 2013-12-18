@@ -34,3 +34,34 @@ end
 Then(/^the repo should have an update frequency of "(.*?)"$/) do |frequency|
   Fork.where(:repo_name => @repo, :user => @user).first.update_frequency.should == frequency
 end
+
+Given(/^the repo "(.*?)" under the user "(.*?)" is enabled$/) do |repo, user|
+  @user = user
+  @repo = repo
+  @fork = Fork.where(:repo_name => repo, :user => user).first
+  @fork.active = true
+  @fork.save
+end
+
+Given(/^the repo has an update frequency of "(.*?)"$/) do |frequency|
+  @fork.update_frequency = frequency
+  @fork.save
+end
+
+Given(/^I click the slider for the repo$/) do
+  find("div[data-repo=#{@user.downcase}-#{@repo.downcase}]").click
+  sleep 5
+end
+
+Then(/^the repo should be inactive$/) do
+  @fork.reload
+  @fork.active.should == false
+end
+
+Then(/^the repo should have an update frequency of nil$/) do
+  @fork.update_frequency.should == nil
+end
+
+Then(/^the select box should be disabled$/) do
+  find("select[data-repo=#{@user.downcase}-#{@repo.downcase}]")['disabled'].should == "disabled"
+end

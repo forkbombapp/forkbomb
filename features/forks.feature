@@ -28,3 +28,14 @@ Feature: Manage forks
     And I set the repo update frequency to "daily"
     Then the repo should be active
     And the repo should have an update frequency of "daily"
+    
+  Scenario: Disable fork
+    Given I access the repos page
+    And the repo "Better-Countdown" under the user "pezholio" is enabled
+    And the repo has an update frequency of "daily"
+    And I access the repos page
+    And I click the slider for the repo
+    Then the repo should be inactive
+    And the repo should have an update frequency of nil
+    And the select box should be disabled
+    

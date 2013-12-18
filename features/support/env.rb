@@ -31,7 +31,7 @@ VCR.configure do |c|
   (ENV.keys-ignore_env).select{|x| x =~ /\A[A-Z_]*\Z/}.each do |key|
     c.filter_sensitive_data("<#{key}>") { ENV[key] }
   end
-  c.default_cassette_options = { :record => :once }
+  c.default_cassette_options = { :record => :new_episodes }
   c.cassette_library_dir = 'features/cassettes'
   c.hook_into :webmock
   c.ignore_localhost = true
