@@ -30,6 +30,8 @@ GEM
     atomic (1.1.14)
     backports (3.3.5)
     bcrypt-ruby (3.1.2)
+    bootstrap-sass (3.0.3.0)
+      sass (~> 3.2)
     builder (3.1.4)
     capybara (2.2.0)
       mime-types (>= 1.16)
@@ -89,6 +91,8 @@ GEM
     faraday_middleware (0.9.0)
       faraday (>= 0.7.4, < 0.9)
     ffi (1.9.3)
+    font-awesome-rails (4.0.3.0)
+      railties (>= 3.2, < 5.0)
     formatador (0.2.4)
     gh (0.13.0)
       addressable
@@ -170,6 +174,7 @@ GEM
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
     orm_adapter (0.5.0)
+    pg (0.17.0)
     polyglot (0.3.3)
     pry (0.9.12.4)
       coderay (~> 1.0)
@@ -188,6 +193,11 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.0.2)
       sprockets-rails (~> 2.0.0)
+    rails_12factor (0.0.2)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.1)
+    rails_stdout_logging (0.0.3)
     railties (4.0.2)
       actionpack (= 4.0.2)
       activesupport (= 4.0.2)
@@ -247,6 +257,7 @@ GEM
     thread_safe (0.1.3)
       atomic
     tilt (1.4.1)
+    timecop (0.7.0)
     timers (1.1.0)
     tins (0.13.1)
     travis (1.6.6)
@@ -285,12 +296,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass (~> 3.0.3)
   coffee-rails (~> 4.0.0)
   coveralls
   cucumber-rails
   database_cleaner
   devise
   dotenv-rails
+  font-awesome-rails
   github_api (~> 0.11)
   guard
   guard-cucumber
@@ -299,11 +312,14 @@ DEPENDENCIES
   jquery-rails
   omniauth
   omniauth-github
+  pg
   rails (~> 4.0.2)
+  rails_12factor
   rspec-rails
   sass-rails (~> 4.0.0)
   sdoc
   sqlite3
+  timecop
   travis
   turbolinks
   uglifier (>= 1.3.0)

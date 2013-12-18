@@ -25,7 +25,7 @@ VCR.configure do |c|
     c.filter_sensitive_data("<#{key}>") { ENV[key] }
   end
   c.default_cassette_options = { :record => :once }
-  c.cassette_library_dir = 'fixtures/vcr_cassettes'
+  c.cassette_library_dir = 'features/cassettes'
   c.hook_into :webmock
 end
 

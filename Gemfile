@@ -8,9 +8,6 @@ gem 'rails', '~> 4.0.2'
 
 gem 'dotenv-rails'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -34,9 +31,16 @@ gem 'jbuilder', '~> 1.2'
 
 gem "github_api", '~> 0.11'
 
+gem 'bootstrap-sass', '~> 3.0.3'
+gem 'font-awesome-rails'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :development, :test do
+  gem 'sqlite3'
 end
 
 group :development do
@@ -53,6 +57,13 @@ group :test do
   gem 'guard'
   gem 'guard-rspec', require: false
   gem 'guard-cucumber'
+  gem 'timecop'
+end
+
+# heroku gems
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
 end
 
 gem 'devise'
