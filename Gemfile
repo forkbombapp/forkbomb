@@ -59,6 +59,12 @@ group :test do
   gem 'timecop'
 end
 
+# heroku gems
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-github'
