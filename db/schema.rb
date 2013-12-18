@@ -11,13 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131217161650) do
+ActiveRecord::Schema.define(version: 20131218100820) do
 
   create_table "forks", force: true do |t|
     t.string   "user"
     t.string   "repo_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "active"
+    t.string   "update_frequency"
   end
 
   create_table "users", force: true do |t|
