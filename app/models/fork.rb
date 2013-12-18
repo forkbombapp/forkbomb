@@ -24,5 +24,9 @@ class Fork < ActiveRecord::Base
     user, repo = path.split('/', 2)
     Fork.where(user: user, repo_name: repo).first
   end
+
+  def github_path
+    "https://github.com/#{user}/#{repo_name}"
+  end
   
 end
