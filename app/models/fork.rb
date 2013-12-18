@@ -16,4 +16,8 @@ class Fork < ActiveRecord::Base
     Fork.where(user: user.login)
   end
   
+  def to_param
+    "#{user}/#{repo_name}"
+  end
+  
 end

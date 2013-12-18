@@ -59,4 +59,6 @@ RSpec.configure do |config|
 
   config.treat_symbols_as_metadata_keys_with_true_values = true # until rspec 3
 
+  config.include Rails.application.routes.url_helpers
+
 end
