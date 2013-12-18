@@ -1,4 +1,4 @@
-class ReposController < ApplicationController
+class ForkController < ApplicationController
   
   def index
     if current_user
@@ -15,10 +15,23 @@ class ReposController < ApplicationController
         @org_repos[org.login] = Fork.get_for_user(org)
       end
       
-      render 'repos/index'
+      render 'fork/index'
     else
       flash[:notice] = "You must be logged in to access this page"
       redirect_to('/')
+    end
+  end
+  
+  def update
+    if current_user
+      fork = Fork.where(
+                :repo_name => params[:fork]["repo_name"],
+                :user      => params[:fork]["user"]
+              ).first
+              
+      params.delete(:repo_name, :user)
+              
+      fork.update_attributes(params[:fork])
     end
   end
   

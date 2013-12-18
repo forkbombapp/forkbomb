@@ -33,6 +33,7 @@ gem "github_api", '~> 0.11'
 
 gem 'bootstrap-sass', '~> 3.0.3'
 gem 'font-awesome-rails'
+gem 'bootstrap-switch-rails'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
