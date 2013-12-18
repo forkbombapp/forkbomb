@@ -1,12 +1,12 @@
 describe "generating routes" do
     
   it "generates correct URL for settings page" do
-    repos_path.should == '/repos'
+    forks_path.should == '/forks'
   end
 
   it "generates correct URLs for forks" do
     fork = FactoryGirl.build(:fork, user: 'Floppy', repo_name: 'such-travis')
-    repo_path(fork).should == '/repos/Floppy/such-travis'
+    fork_path(fork).should == '/forks/Floppy/such-travis'
   end
 
 end

@@ -1,7 +1,7 @@
 describe "routes" do
     
-  it "routes /repos to index action" do
-    get('/repos').should route_to :controller => 'repos', :action => 'index'
+  it "routes /fork to index action" do
+    get('/forks').should route_to :controller => 'forks', :action => 'index'
   end
 
   {
@@ -14,18 +14,18 @@ describe "routes" do
     "/such-travis"        => false,
     "Floppy/"             => false,
     "what/the*fuck"       => false,
-  }.each_pair do |repo_path, routable|
+  }.each_pair do |fork_path, routable|
     
     if routable
 
-      it "routes /repos/#{repo_path} to show action" do
-        get("/repos/#{repo_path}").should route_to :controller => 'repos', :action => 'show', :id => repo_path
+      it "routes /forks/#{fork_path} to show action" do
+        get("/forks/#{fork_path}").should route_to :controller => 'forks', :action => 'show', :id => fork_path
       end
 
     else
 
-      it "/repos/#{repo_path} should not route" do
-        get("/repos/#{repo_path}").should_not be_routable
+      it "/forks/#{fork_path} should not route" do
+        get("/forks/#{fork_path}").should_not be_routable
       end
 
     end

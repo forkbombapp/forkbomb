@@ -1,4 +1,4 @@
-class ForkController < ApplicationController
+class ForksController < ApplicationController
   
   def index
     if current_user
@@ -15,7 +15,7 @@ class ForkController < ApplicationController
         @org_repos[org.login] = Fork.get_for_user(org)
       end
       
-      render 'fork/index'
+      render 'forks/index'
     else
       flash[:notice] = "You must be logged in to access this page"
       redirect_to('/')
