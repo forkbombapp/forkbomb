@@ -30,4 +30,6 @@ notifications:
     channels:
       - "irc.freenode.net#theodi"
     template:
-      - "%{repository} %{branch}: %{message} %{build_url}"
+      - "%{repository}#%{build_number} (%{branch} - %{commit} : %{author}): %{message}"
+      - "Change view : %{compare_url}"
+      - "Build details : %{build_url}"
