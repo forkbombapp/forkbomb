@@ -1,5 +1,5 @@
 Then(/^I should be redirected to the repos page$/) do
-  current_path.should == '/forks'
+  current_path.should == '/forkss'
 end
 
 Then(/^I should see (.*?) forks under "(.*?)"$/) do |count, user|
@@ -9,7 +9,7 @@ Then(/^I should see (.*?) forks under "(.*?)"$/) do |count, user|
 end
 
 When(/^I access the repos page$/) do
-  visit('/fork')
+  visit('/forks')
 end
 
 When(/^I click the slider for the repo "(.*?)" under the user "(.*?)"$/) do |repo, user|
