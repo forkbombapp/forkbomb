@@ -4,8 +4,6 @@
   <%= render partial: 'list', locals: { user: org, repos: @org_repos[org.login] } %>
 <% end %>
 
-<div class="foo">asdsdfdsfsd</div>
-
 <script>
   $(document).ready(function() {
     $('.status').on('switch-change', function (e, data) {
