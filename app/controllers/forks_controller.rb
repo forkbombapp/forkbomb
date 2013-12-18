@@ -35,4 +35,8 @@ class ForksController < ApplicationController
     end
   end
   
+  def show
+    @fork = Fork.find_by_repo_path(params[:id])
+  end
+  
 end

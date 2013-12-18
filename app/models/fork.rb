@@ -20,4 +20,9 @@ class Fork < ActiveRecord::Base
     "#{user}/#{repo_name}"
   end
   
+  def self.find_by_repo_path(path)
+    user, repo = path.split('/', 2)
+    Fork.where(user: user, repo_name: repo).first
+  end
+  
 end
