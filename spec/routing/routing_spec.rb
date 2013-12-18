@@ -32,4 +32,9 @@ describe "routes" do
     end
   end
 
+  it "routes /forks/Floppy/such-travis/badge.png to badge action" do
+    get("/forks/Floppy/such-travis/badge.png").should route_to :controller => 'forks', :action => 'badge', :fork_id => "Floppy/such-travis", :format => 'png'
+  end
+
+
 end

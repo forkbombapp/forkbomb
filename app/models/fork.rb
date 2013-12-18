@@ -29,4 +29,8 @@ class Fork < ActiveRecord::Base
     "https://github.com/#{user}/#{repo_name}"
   end
   
+  def current?
+    true
+  end
+  
 end

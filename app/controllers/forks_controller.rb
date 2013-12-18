@@ -38,5 +38,12 @@ class ForksController < ApplicationController
   def show
     @fork = Fork.find_by_repo_path(params[:id])
   end
+
+  def badge
+    @fork = Fork.find_by_repo_path(params[:fork_id])
+    respond_to do |wants|
+      wants.png { send_file File.join(Rails.root, 'app', 'views', 'forks', (@fork.current? ? 'current.png' : 'outdated.png')), disposition: 'inline' }
+    end
+  end
   
 end
