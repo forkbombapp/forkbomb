@@ -24,8 +24,6 @@ class ForkController < ApplicationController
   
   def update
     if current_user
-      require 'pry-remote'
-      binding.pry_remote
       fork = Fork.where(
                 :repo_name => params[:fork]["repo_name"],
                 :user      => params[:fork]["user"]
