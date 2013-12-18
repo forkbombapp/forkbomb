@@ -11,7 +11,7 @@
     </tr>
   <% repos.each do |repo| %>
     <tr>
-      <td><%= repo.repo_name %></td>
+      <td><%= link_to repo.repo_name, repo %></td>
       <td>
         <%= form_for repo, remote: true do |f| %>
         <div class="make-switch switch-mini status" data-on="primary">
