@@ -18,6 +18,31 @@ class Fork < ActiveRecord::Base
     Fork.where(user: user.login)
   end
   
+  def generate_pr
+    # get repository details
+    repo = Rails.application.github.repos.get self.user, self.repo_name
+
+    if repo.parent
+      branch = repo.default_branch
+      upstream_owner = repo.parent.owner.login
+      upstream_branch = repo.parent.default_branch
+
+      begin
+        Rails.application.github.pulls.create(user, repo_name,
+          title: 'Upstream changes',
+          body: 'Automatically opened by http://forkbomb.io',
+          head: "#{upstream_owner}:#{upstream_branch}",
+          base: branch
+        )
+      rescue Github::Error::UnprocessableEntity => ex
+        # absorb errors caused by already-open PRs or zero-size PRs
+        raise unless ex.message.include?("A pull request already exists") || ex.message.include?("No commits between")
+      end
+
+    end
+
+  end
+  
   def to_param
     "#{user}/#{repo_name}"
   end
