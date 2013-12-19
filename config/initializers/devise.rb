@@ -17,5 +17,5 @@ Devise.setup do |config|
   config.sign_out_via = :get
 
   OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE if Rails.env.development? 
-  config.omniauth :github, ENV['FORKBOMB_GITHUB_CLIENT_ID'], ENV['FORKBOMB_GITHUB_CLIENT_SECRET'], :scope => 'user,public_repo'  
+  config.omniauth :github, ENV['FORKBOMB_GITHUB_CLIENT_ID'], ENV['FORKBOMB_GITHUB_CLIENT_SECRET'], :scope => ''  
 end
