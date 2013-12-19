@@ -18,7 +18,7 @@ Then(/^my username should be stored$/) do
 end
 
 Given(/^I am logged in$/) do
-  mock_login('foo@bar.com', 'foobar')
+  mock_login('foobar')
   visit('/')
   click_link('Sign in')
 end

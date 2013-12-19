@@ -7,7 +7,6 @@ Feature: Manage forks
   
   Background: 
     Given my github username is "pezholio"
-    And my github email is "pezholio@gmail.com"
     And I click login
   
   Scenario: View forks
