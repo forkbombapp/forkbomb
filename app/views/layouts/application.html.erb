@@ -3,52 +3,54 @@
 <head>
   <title>Forkbomb</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
   <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
   <![endif]-->
 </head>
 <body>
-  
-  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Forkbomb</a>
-      </div>
-      <div class="navbar-collapse collapse">
-        <% if current_user %>
-          <%= link_to "Sign out", sign_out_path, class: "btn btn-default navbar-btn navbar-right", role: "button" %>
-        <% else %>
-          <%= link_to "Sign in", user_omniauth_authorize_path(:github), class: "btn btn-default navbar-btn navbar-right", role: "button" %>
-        <% end %>
-      </div><!--/.navbar-collapse -->
-    </div>
-  </div>
 
-  <% if flash[:notice] %>
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Forkbomb</a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <% if current_user %>
+          <%= link_to "Sign out", sign_out_path, class: "btn btn-default navbar-btn navbar-right", role: "button" %>
+      <% else %>
+          <%= link_to "Sign in", user_omniauth_authorize_path(:github), class: "btn btn-default navbar-btn navbar-right", role: "button" %>
+      <% end %>
+    </div>
+    <!--/.navbar-collapse -->
+  </div>
+</div>
+
+<% if flash[:notice] %>
     <div class="container">
       <div class="notice"><%= flash[:notice] %></div>
     </div>
-  <% end %>
+<% end %>
 
-  <div class="container">
+<div class="container">
 
-    <%= yield %>
+  <%= yield %>
 
-    <footer>
-      <p>An <%= link_to 'Open Data Institute', 'http://theodi.org' %> Experiment.
-      Design by <%= link_to 'Kimberly C. Abbott', 'http://www.kimberlycabbott.com/' %></p>
-    </footer>
-  </div>
+  <footer>
+    <p>An <%= link_to 'Open Data Institute', 'http://theodi.org' %> Experiment.
+      Design by <%= link_to 'Kimberly C. Abbott', 'http://www.kimberlycabbott.com/' %>.
+    Fork Forkbomb on <%= link_to 'Github', 'https://github.com/theodi/forkbomb' %></p>
+  </footer>
+</div>
 
 </body>
 </html>
