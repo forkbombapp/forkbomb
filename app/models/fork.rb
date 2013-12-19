@@ -33,4 +33,10 @@ class Fork < ActiveRecord::Base
     true
   end
   
+  private
+  
+    def set_update_frequencies
+       self.update_frequency = nil if self.active == false
+    end
+  
 end

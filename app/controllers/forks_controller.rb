@@ -28,9 +28,6 @@ class ForksController < ApplicationController
                 :repo_name => params[:fork][:repo_name],
                 :user      => params[:fork][:user]
               ).first
-      
-      # Set update frequency to nil if repo is deactivated
-      params[:fork][:update_frequency] = nil if params[:fork][:active] == "0"
                       
       fork.update_attributes(params[:fork].permit(:active, :update_frequency))
       

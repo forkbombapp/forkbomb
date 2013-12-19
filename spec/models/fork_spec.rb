@@ -41,4 +41,11 @@ describe Fork do
     fork.github_path.should == 'https://github.com/batman/batmobile'
   end
   
+  it "should set update frequency to nil when fork is disabled", :vcr do
+    fork = FactoryGirl.create(:fork, user: 'batman', repo_name: 'batmobile', active: "1", update_frequency: "daily")
+    fork.active = "0"
+    fork.save
+    
+    fork.update_frequency.should be_nil
+  end
 end
