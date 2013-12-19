@@ -35,6 +35,12 @@ class Fork < ActiveRecord::Base
     true
   end
   
+  def select_options
+    options = {'Update Frequency' => nil, 'Daily' => 'daily', 'Weekly' => 'weekly', 'Monthly' => 'monthly'}
+    options.delete('Update Frequency') if self.active == true
+    options
+  end
+  
   private
   
     def set_update_frequencies

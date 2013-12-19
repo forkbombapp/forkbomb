@@ -25,9 +25,8 @@
         <%= form_for repo, remote: true do |f| %>
           <%= f.hidden_field :repo_name %>
           <%= f.hidden_field :user %>
-          <%= f.select :update_frequency, 
-                      {'Update Frequency' => nil, 'Daily' => 'daily', 'Weekly' => 'weekly', 'Monthly' => 'monthly'}, {}, 
-                      :class => 'update-frequency form-control', :disabled => repo.active.blank?, "data-repo" => "#{repo.user.downcase}-#{repo.repo_name.downcase}" 
+          <%= f.select :update_frequency, repo.select_options, {}, 
+                       :class => 'update-frequency form-control', :disabled => repo.active.blank?, "data-repo" => "#{repo.user.downcase}-#{repo.repo_name.downcase}" 
           %>
         <% end %>
       </td>

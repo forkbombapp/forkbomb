@@ -53,4 +53,10 @@ describe Fork do
     fork = FactoryGirl.create(:fork, user: 'batman', repo_name: 'batmobile', active: "1")
     fork.update_frequency.should == "daily"
   end
+  
+  it "should remove the first select option for active forks", :vcr do
+    fork = FactoryGirl.create(:fork, user: 'batman', repo_name: 'batmobile', active: "1")
+    fork.select_options.should == {'Daily' => 'daily', 'Weekly' => 'weekly', 'Monthly' => 'monthly'}
+  end
+  
 end
