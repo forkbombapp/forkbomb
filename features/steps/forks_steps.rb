@@ -24,6 +24,7 @@ When(/^I click the slider for the repo "(.*?)" under the user "(.*?)"$/) do |rep
   @repo = repo
   @user = user
   find("div[data-repo=#{user.downcase}-#{repo.downcase}]").click
+  sleep 2
 end
 
 Then(/^the select box should be enabled$/) do
