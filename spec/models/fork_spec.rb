@@ -24,4 +24,21 @@ describe Fork do
     end
   end
   
+  it "should generate a param", :vcr do 
+    fork = FactoryGirl.create(:fork, user: 'batman', repo_name: 'batmobile')
+    fork.to_param.should == "batman/batmobile"
+  end
+  
+  it "should find forks by repo path", :vcr do
+    fork = FactoryGirl.create(:fork, user: 'batman', repo_name: 'batmobile')
+    repo = Fork.find_by_repo_path('batman/batmobile')
+    repo.user.should == 'batman'
+    repo.repo_name.should == 'batmobile'
+  end
+  
+  it "should generate a github path", :vcr do
+    fork = FactoryGirl.create(:fork, user: 'batman', repo_name: 'batmobile')
+    fork.github_path.should == 'https://github.com/batman/batmobile'
+  end
+  
 end
