@@ -100,4 +100,23 @@ describe Fork do
     close_pr(fork.user,fork.repo_name)
   end
   
+  it "should enqueue a job on save", :vcr do
+    Fork.any_instance.should_receive(:delay).once.and_call_original
+    fork = FactoryGirl.create(:fork, user: 'Floppy', repo_name: 'such-travis', active: true)
+  end
+  
+  {
+    'daily' => "1994-01-02T00:00",
+    'weekly' => "1994-01-03T00:00",
+    'monthly' => "1994-02-01T00:00",
+  }.each_pair do |period, date|
+    
+    it "should enqueue job at #{date} for #{period} updates", :vcr do    
+      Timecop.freeze(Time.local(1994)) # because THAT'S WHEN TIMECOP WAS SET
+      Fork.any_instance.should_receive(:delay).with(run_at: DateTime.parse(date)).once.and_call_original
+      fork = FactoryGirl.create(:fork, user: 'Floppy', repo_name: 'such-travis', active: true, update_frequency: period)
+      Timecop.return
+    end
+  end
+  
 end

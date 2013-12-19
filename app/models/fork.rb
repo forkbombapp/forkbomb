@@ -1,6 +1,7 @@
 class Fork < ActiveRecord::Base
   
   before_save :set_update_frequencies
+  after_save :enqueue
   
   def self.get_for_user(user)
     user_forks = Fork.where(user: user.login)
@@ -40,7 +41,7 @@ class Fork < ActiveRecord::Base
       end
 
     end
-
+    enqueue
   end
   
   def to_param
@@ -71,6 +72,21 @@ class Fork < ActiveRecord::Base
     def set_update_frequencies
        self.update_frequency = nil if self.active == false
        self.update_frequency = "daily" if self.active == true && self.update_frequency.nil?
+    end
+    
+    def enqueue
+      delay(run_at: next_run_time).generate_pr if active
+    end
+
+    def next_run_time
+      case self.update_frequency
+      when 'daily'
+        1.day.from_now.at_midnight
+      when 'weekly'
+        1.week.from_now.beginning_of_week
+      when 'monthly'
+        1.month.from_now.beginning_of_month
+      end
     end
   
 end
