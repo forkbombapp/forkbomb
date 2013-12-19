@@ -1,5 +1,7 @@
 class Fork < ActiveRecord::Base
   
+  before_save :set_update_frequencies
+  
   def self.get_for_user(user)
     user_forks = Fork.where(user: user.login)
     
@@ -32,5 +34,18 @@ class Fork < ActiveRecord::Base
   def current?
     true
   end
+  
+  def select_options
+    options = {'Update Frequency' => nil, 'Daily' => 'daily', 'Weekly' => 'weekly', 'Monthly' => 'monthly'}
+    options.delete('Update Frequency') if self.active == true
+    options
+  end
+  
+  private
+  
+    def set_update_frequencies
+       self.update_frequency = nil if self.active == false
+       self.update_frequency = "daily" if self.active == true && self.update_frequency.nil?
+    end
   
 end
