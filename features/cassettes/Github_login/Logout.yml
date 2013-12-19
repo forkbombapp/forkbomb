@@ -1,0 +1,211 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/users/foobar?access_token=<FORKBOMB_GITHUB_OAUTH_TOKEN>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json,application/vnd.github.beta+json;q=0.5,application/json;q=0.1
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - Github Ruby Gem 0.11.1
+      Authorization:
+      - Token token="<FORKBOMB_GITHUB_OAUTH_TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Thu, 19 Dec 2013 11:02:19 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4999'
+      X-Ratelimit-Reset:
+      - '1387454539'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Last-Modified:
+      - Wed, 25 Sep 2013 07:57:27 GMT
+      Etag:
+      - '"665ab5adf68a1aed6ef8e2fcb2bafdaa"'
+      X-Oauth-Scopes:
+      - user, public_repo, repo, gist
+      X-Accepted-Oauth-Scopes:
+      - user
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - '*'
+      X-Github-Request-Id:
+      - 3EFEF783:6DA9:AB0D29A:52B2D23B
+    body:
+      encoding: UTF-8
+      string: '{"login":"foobar","id":5953,"avatar_url":"https://gravatar.com/avatar/b68c07c166a4ec20734a936ce6aad8f7?d=https%3A%2F%2Fidenticons.github.com%2Fe769e03a9d329b2e864b4bf4ff54ff39.png&r=x","gravatar_id":"b68c07c166a4ec20734a936ce6aad8f7","url":"https://api.github.com/users/foobar","html_url":"https://github.com/foobar","followers_url":"https://api.github.com/users/foobar/followers","following_url":"https://api.github.com/users/foobar/following{/other_user}","gists_url":"https://api.github.com/users/foobar/gists{/gist_id}","starred_url":"https://api.github.com/users/foobar/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/foobar/subscriptions","organizations_url":"https://api.github.com/users/foobar/orgs","repos_url":"https://api.github.com/users/foobar/repos","events_url":"https://api.github.com/users/foobar/events{/privacy}","received_events_url":"https://api.github.com/users/foobar/received_events","type":"User","site_admin":false,"name":"Tristan
+        Su","company":null,"blog":null,"location":null,"email":"tristanqsu@yahoo.com","hireable":true,"bio":null,"public_repos":2,"public_gists":0,"followers":0,"following":0,"created_at":"2008-04-09T00:42:14Z","updated_at":"2013-09-25T07:57:27Z"}'
+    http_version: 
+  recorded_at: Thu, 19 Dec 2013 11:02:21 GMT
+- request:
+    method: get
+    uri: https://api.github.com/users/foobar/repos?access_token=<FORKBOMB_GITHUB_OAUTH_TOKEN>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json,application/vnd.github.beta+json;q=0.5,application/json;q=0.1
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - Github Ruby Gem 0.11.1
+      Authorization:
+      - Token token="<FORKBOMB_GITHUB_OAUTH_TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Thu, 19 Dec 2013 11:02:19 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4998'
+      X-Ratelimit-Reset:
+      - '1387454539'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Etag:
+      - '"16b49b5f70f7d6f83221ee5037a274df"'
+      X-Oauth-Scopes:
+      - user, public_repo, repo, gist
+      X-Accepted-Oauth-Scopes:
+      - repo, repo:status, repo:deployment, public_repo, delete_repo, user, user:email,
+        user:follow, admin:org, write:org, read:org, gist, site_admin, user:assets,
+        user:assets:read
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - '*'
+      X-Github-Request-Id:
+      - 3EFEF783:6DA8:492C220:52B2D23B
+    body:
+      encoding: UTF-8
+      string: '[{"id":8487,"name":"bioindustry","full_name":"foobar/bioindustry","owner":{"login":"foobar","id":5953,"avatar_url":"https://gravatar.com/avatar/b68c07c166a4ec20734a936ce6aad8f7?d=https%3A%2F%2Fidenticons.github.com%2Fe769e03a9d329b2e864b4bf4ff54ff39.png&r=x","gravatar_id":"b68c07c166a4ec20734a936ce6aad8f7","url":"https://api.github.com/users/foobar","html_url":"https://github.com/foobar","followers_url":"https://api.github.com/users/foobar/followers","following_url":"https://api.github.com/users/foobar/following{/other_user}","gists_url":"https://api.github.com/users/foobar/gists{/gist_id}","starred_url":"https://api.github.com/users/foobar/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/foobar/subscriptions","organizations_url":"https://api.github.com/users/foobar/orgs","repos_url":"https://api.github.com/users/foobar/repos","events_url":"https://api.github.com/users/foobar/events{/privacy}","received_events_url":"https://api.github.com/users/foobar/received_events","type":"User","site_admin":false},"private":false,"html_url":"https://github.com/foobar/bioindustry","description":"bioindustry
+        data warehouse","fork":false,"url":"https://api.github.com/repos/foobar/bioindustry","forks_url":"https://api.github.com/repos/foobar/bioindustry/forks","keys_url":"https://api.github.com/repos/foobar/bioindustry/keys{/key_id}","collaborators_url":"https://api.github.com/repos/foobar/bioindustry/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/foobar/bioindustry/teams","hooks_url":"https://api.github.com/repos/foobar/bioindustry/hooks","issue_events_url":"https://api.github.com/repos/foobar/bioindustry/issues/events{/number}","events_url":"https://api.github.com/repos/foobar/bioindustry/events","assignees_url":"https://api.github.com/repos/foobar/bioindustry/assignees{/user}","branches_url":"https://api.github.com/repos/foobar/bioindustry/branches{/branch}","tags_url":"https://api.github.com/repos/foobar/bioindustry/tags","blobs_url":"https://api.github.com/repos/foobar/bioindustry/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/foobar/bioindustry/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/foobar/bioindustry/git/refs{/sha}","trees_url":"https://api.github.com/repos/foobar/bioindustry/git/trees{/sha}","statuses_url":"https://api.github.com/repos/foobar/bioindustry/statuses/{sha}","languages_url":"https://api.github.com/repos/foobar/bioindustry/languages","stargazers_url":"https://api.github.com/repos/foobar/bioindustry/stargazers","contributors_url":"https://api.github.com/repos/foobar/bioindustry/contributors","subscribers_url":"https://api.github.com/repos/foobar/bioindustry/subscribers","subscription_url":"https://api.github.com/repos/foobar/bioindustry/subscription","commits_url":"https://api.github.com/repos/foobar/bioindustry/commits{/sha}","git_commits_url":"https://api.github.com/repos/foobar/bioindustry/git/commits{/sha}","comments_url":"https://api.github.com/repos/foobar/bioindustry/comments{/number}","issue_comment_url":"https://api.github.com/repos/foobar/bioindustry/issues/comments/{number}","contents_url":"https://api.github.com/repos/foobar/bioindustry/contents/{+path}","compare_url":"https://api.github.com/repos/foobar/bioindustry/compare/{base}...{head}","merges_url":"https://api.github.com/repos/foobar/bioindustry/merges","archive_url":"https://api.github.com/repos/foobar/bioindustry/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/foobar/bioindustry/downloads","issues_url":"https://api.github.com/repos/foobar/bioindustry/issues{/number}","pulls_url":"https://api.github.com/repos/foobar/bioindustry/pulls{/number}","milestones_url":"https://api.github.com/repos/foobar/bioindustry/milestones{/number}","notifications_url":"https://api.github.com/repos/foobar/bioindustry/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/foobar/bioindustry/labels{/name}","releases_url":"https://api.github.com/repos/foobar/bioindustry/releases{/id}","created_at":"2008-04-11T01:10:52Z","updated_at":"2012-12-12T17:02:45Z","pushed_at":null,"git_url":"git://github.com/foobar/bioindustry.git","ssh_url":"git@github.com:foobar/bioindustry.git","clone_url":"https://github.com/foobar/bioindustry.git","svn_url":"https://github.com/foobar/bioindustry","homepage":"","size":68,"stargazers_count":1,"watchers_count":1,"language":null,"has_issues":true,"has_downloads":true,"has_wiki":true,"forks_count":0,"mirror_url":null,"open_issues_count":0,"forks":0,"open_issues":0,"watchers":1,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true}},{"id":11938381,"name":"gmail","full_name":"foobar/gmail","owner":{"login":"foobar","id":5953,"avatar_url":"https://gravatar.com/avatar/b68c07c166a4ec20734a936ce6aad8f7?d=https%3A%2F%2Fidenticons.github.com%2Fe769e03a9d329b2e864b4bf4ff54ff39.png&r=x","gravatar_id":"b68c07c166a4ec20734a936ce6aad8f7","url":"https://api.github.com/users/foobar","html_url":"https://github.com/foobar","followers_url":"https://api.github.com/users/foobar/followers","following_url":"https://api.github.com/users/foobar/following{/other_user}","gists_url":"https://api.github.com/users/foobar/gists{/gist_id}","starred_url":"https://api.github.com/users/foobar/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/foobar/subscriptions","organizations_url":"https://api.github.com/users/foobar/orgs","repos_url":"https://api.github.com/users/foobar/repos","events_url":"https://api.github.com/users/foobar/events{/privacy}","received_events_url":"https://api.github.com/users/foobar/received_events","type":"User","site_admin":false},"private":false,"html_url":"https://github.com/foobar/gmail","description":"A
+        Pythonic interface for Google Mail","fork":true,"url":"https://api.github.com/repos/foobar/gmail","forks_url":"https://api.github.com/repos/foobar/gmail/forks","keys_url":"https://api.github.com/repos/foobar/gmail/keys{/key_id}","collaborators_url":"https://api.github.com/repos/foobar/gmail/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/foobar/gmail/teams","hooks_url":"https://api.github.com/repos/foobar/gmail/hooks","issue_events_url":"https://api.github.com/repos/foobar/gmail/issues/events{/number}","events_url":"https://api.github.com/repos/foobar/gmail/events","assignees_url":"https://api.github.com/repos/foobar/gmail/assignees{/user}","branches_url":"https://api.github.com/repos/foobar/gmail/branches{/branch}","tags_url":"https://api.github.com/repos/foobar/gmail/tags","blobs_url":"https://api.github.com/repos/foobar/gmail/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/foobar/gmail/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/foobar/gmail/git/refs{/sha}","trees_url":"https://api.github.com/repos/foobar/gmail/git/trees{/sha}","statuses_url":"https://api.github.com/repos/foobar/gmail/statuses/{sha}","languages_url":"https://api.github.com/repos/foobar/gmail/languages","stargazers_url":"https://api.github.com/repos/foobar/gmail/stargazers","contributors_url":"https://api.github.com/repos/foobar/gmail/contributors","subscribers_url":"https://api.github.com/repos/foobar/gmail/subscribers","subscription_url":"https://api.github.com/repos/foobar/gmail/subscription","commits_url":"https://api.github.com/repos/foobar/gmail/commits{/sha}","git_commits_url":"https://api.github.com/repos/foobar/gmail/git/commits{/sha}","comments_url":"https://api.github.com/repos/foobar/gmail/comments{/number}","issue_comment_url":"https://api.github.com/repos/foobar/gmail/issues/comments/{number}","contents_url":"https://api.github.com/repos/foobar/gmail/contents/{+path}","compare_url":"https://api.github.com/repos/foobar/gmail/compare/{base}...{head}","merges_url":"https://api.github.com/repos/foobar/gmail/merges","archive_url":"https://api.github.com/repos/foobar/gmail/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/foobar/gmail/downloads","issues_url":"https://api.github.com/repos/foobar/gmail/issues{/number}","pulls_url":"https://api.github.com/repos/foobar/gmail/pulls{/number}","milestones_url":"https://api.github.com/repos/foobar/gmail/milestones{/number}","notifications_url":"https://api.github.com/repos/foobar/gmail/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/foobar/gmail/labels{/name}","releases_url":"https://api.github.com/repos/foobar/gmail/releases{/id}","created_at":"2013-08-07T01:11:39Z","updated_at":"2013-08-07T01:11:40Z","pushed_at":"2013-08-06T23:53:04Z","git_url":"git://github.com/foobar/gmail.git","ssh_url":"git@github.com:foobar/gmail.git","clone_url":"https://github.com/foobar/gmail.git","svn_url":"https://github.com/foobar/gmail","homepage":"","size":119,"stargazers_count":0,"watchers_count":0,"language":"Python","has_issues":false,"has_downloads":true,"has_wiki":true,"forks_count":0,"mirror_url":null,"open_issues_count":0,"forks":0,"open_issues":0,"watchers":0,"default_branch":"master","permissions":{"admin":false,"push":false,"pull":true}}]'
+    http_version: 
+  recorded_at: Thu, 19 Dec 2013 11:02:22 GMT
+- request:
+    method: get
+    uri: https://api.github.com/users/foobar/orgs?access_token=<FORKBOMB_GITHUB_OAUTH_TOKEN>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json,application/vnd.github.beta+json;q=0.5,application/json;q=0.1
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - Github Ruby Gem 0.11.1
+      Authorization:
+      - Token token="<FORKBOMB_GITHUB_OAUTH_TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Thu, 19 Dec 2013 11:02:20 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4997'
+      X-Ratelimit-Reset:
+      - '1387454539'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Etag:
+      - '"bea361185c3b3991c0c6fb944373225e"'
+      X-Oauth-Scopes:
+      - user, public_repo, repo, gist
+      X-Accepted-Oauth-Scopes:
+      - read:org, write:org, admin:org, repo, user
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '2'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - '*'
+      X-Github-Request-Id:
+      - 3EFEF783:6DAC:BE60B6A:52B2D23B
+    body:
+      encoding: UTF-8
+      string: '[]'
+    http_version: 
+  recorded_at: Thu, 19 Dec 2013 11:02:22 GMT
+recorded_with: VCR 2.8.0

@@ -17,3 +17,15 @@
 
 /* avoid top navbar */ 
 body { padding-top: 70px; }
+
+select.update-frequency {
+	height: 22px;
+	line-height: 22px;
+	width: 150px;
+	padding: 5px 10px;
+	font-size: 12px;
+}
+
+select.update-frequency[disabled] {
+	color: #999;
+}

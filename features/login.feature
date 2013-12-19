@@ -11,3 +11,8 @@ Feature: Github login
     And I click login
     Then I should see a successful signin message
     And my email and username should be stored
+    
+  Scenario: Logout
+    Given I am logged in
+    And I click log out
+    Then I should be logged out of the system

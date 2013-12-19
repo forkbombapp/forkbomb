@@ -4,12 +4,22 @@
   <%= render partial: 'list', locals: { user: org, repos: @org_repos[org.login] } %>
 <% end %>
 
-<div class="foo">asdsdfdsfsd</div>
-
 <script>
   $(document).ready(function() {
     $('.status').on('switch-change', function (e, data) {
        $(this).parent('form').submit();
+       select = $('select[data-repo="' + $(this).attr("data-repo") + '"]')
+       
+       if (data.value === true) {
+        select.removeAttr('disabled');
+       } else {
+        select.attr('disabled', 'disabled');
+        select.val('')
+       }
     });
+    
+    $('.update-frequency').change(function() {
+      $(this).parent('form').submit();
+    })
   })
 </script>

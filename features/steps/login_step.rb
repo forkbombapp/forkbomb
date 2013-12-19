@@ -21,3 +21,17 @@ Then(/^my email and username should be stored$/) do
   user.email.should == @github_email
   user.github_username.should == @github_username
 end
+
+Given(/^I am logged in$/) do
+  mock_login('foo@bar.com', 'foobar')
+  visit('/')
+  click_link('Sign in')
+end
+
+Given(/^I click log out$/) do
+  click_link('Sign out')
+end
+
+Then(/^I should be logged out of the system$/) do
+  page.should have_content('Signed out!')
+end

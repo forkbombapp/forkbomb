@@ -59,6 +59,7 @@ group :test do
   gem 'guard-rspec', require: false
   gem 'guard-cucumber'
   gem 'timecop'
+  gem 'poltergeist'
   gem 'factory_girl_rails'
 end
 
