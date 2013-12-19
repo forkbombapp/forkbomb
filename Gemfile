@@ -72,6 +72,7 @@ end
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-github'
+gem 'delayed_job_active_record'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
