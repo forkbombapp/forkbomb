@@ -16,6 +16,12 @@ Feature: Manage forks
     And I should see 0 forks under "Lichfield-District-Council"
     And I should see 47 forks under "theodi"
     
+  Scenario: Non-logged in user tries to access forks page
+    When I click log out
+    And I access the repos page
+    Then I should be redirected to the homepage
+    And I should see a notice telling me to sign in
+    
   Scenario: Set fork status
     When I access the repos page
     And I click the slider for the repo "Better-Countdown" under the user "pezholio"

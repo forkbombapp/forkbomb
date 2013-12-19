@@ -1,5 +1,5 @@
 Then(/^I should be redirected to the repos page$/) do
-  current_path.should == '/forkss'
+  current_path.should == '/forks'
 end
 
 Then(/^I should see (.*?) forks under "(.*?)"$/) do |count, user|
@@ -10,6 +10,14 @@ end
 
 When(/^I access the repos page$/) do
   visit('/forks')
+end
+
+Then(/^I should be redirected to the homepage$/) do
+  current_path.should == '/'
+end
+
+Then(/^I should see a notice telling me to sign in$/) do
+  page.should have_content('You must be logged in to access this page')
 end
 
 When(/^I click the slider for the repo "(.*?)" under the user "(.*?)"$/) do |repo, user|
