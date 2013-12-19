@@ -59,4 +59,64 @@ describe Fork do
     fork.select_options.should == {'Daily' => 'daily', 'Weekly' => 'weekly', 'Monthly' => 'monthly'}
   end
   
+  def count_prs(username,repo)
+    pulls = Rails.application.github.pull_requests.list(username, repo)
+    pulls.count
+  end
+
+  def close_pr(username, repo, number = nil)
+    number ||= Rails.application.github.pull_requests.list(username, repo).first.number
+    Rails.application.github.pull_requests.update(username, repo, number, state: 'closed')
+  end
+
+  it "should open a pull request from a parent to a fork", :vcr do
+    fork = FactoryGirl.create(:fork, user: 'Floppy', repo_name: 'such-travis')
+
+    count_prs(fork.user,fork.repo_name).should == 0
+
+    # try to open the PR
+    fork.generate_pr
+    count_prs(fork.user,fork.repo_name).should == 1
+
+    # tidy up
+    close_pr(fork.user,fork.repo_name)
+
+  end
+
+  it "should not open a PR twice", :vcr do
+    fork = FactoryGirl.create(:fork, user: 'Floppy', repo_name: 'such-travis')
+
+    count_prs(fork.user,fork.repo_name).should == 0
+
+    # try to open the PR
+    fork.generate_pr
+    count_prs(fork.user,fork.repo_name).should == 1
+
+    # open the PR again
+    fork.generate_pr
+    count_prs(fork.user,fork.repo_name).should == 1
+
+    # tidy up
+    close_pr(fork.user,fork.repo_name)
+  end
+  
+  it "should enqueue a job on save", :vcr do
+    Fork.any_instance.should_receive(:delay).once.and_call_original
+    fork = FactoryGirl.create(:fork, user: 'Floppy', repo_name: 'such-travis', active: true)
+  end
+  
+  {
+    'daily' => "1994-01-02T00:00",
+    'weekly' => "1994-01-03T00:00",
+    'monthly' => "1994-02-01T00:00",
+  }.each_pair do |period, date|
+    
+    it "should enqueue job at #{date} for #{period} updates", :vcr do    
+      Timecop.freeze(Time.local(1994)) # because THAT'S WHEN TIMECOP WAS SET
+      Fork.any_instance.should_receive(:delay).with(run_at: DateTime.parse(date)).once.and_call_original
+      fork = FactoryGirl.create(:fork, user: 'Floppy', repo_name: 'such-travis', active: true, update_frequency: period)
+      Timecop.return
+    end
+  end
+  
 end
