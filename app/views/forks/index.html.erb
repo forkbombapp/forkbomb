@@ -12,6 +12,7 @@
        
        if (data.value === true) {
         select.removeAttr('disabled');
+        select.find('option[value=""]').remove();
        } else {
         select.attr('disabled', 'disabled');
         select.val('')

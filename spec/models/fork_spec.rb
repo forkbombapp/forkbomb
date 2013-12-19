@@ -48,4 +48,9 @@ describe Fork do
     
     fork.update_frequency.should be_nil
   end
+  
+  it "should set the update frequency to daily when fork is initially enabled", :vcr do
+    fork = FactoryGirl.create(:fork, user: 'batman', repo_name: 'batmobile', active: "1")
+    fork.update_frequency.should == "daily"
+  end
 end

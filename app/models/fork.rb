@@ -1,5 +1,7 @@
 class Fork < ActiveRecord::Base
   
+  before_save :set_update_frequencies
+  
   def self.get_for_user(user)
     user_forks = Fork.where(user: user.login)
     
@@ -37,6 +39,7 @@ class Fork < ActiveRecord::Base
   
     def set_update_frequencies
        self.update_frequency = nil if self.active == false
+       self.update_frequency = "daily" if self.active == true && self.update_frequency.nil?
     end
   
 end
