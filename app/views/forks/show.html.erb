@@ -1,27 +1,40 @@
-<h1><%= @fork.owner %> / <%= @fork.repo_name %> <%= link_to "<i class='fa fa-github fa-lg'></i>".html_safe, @fork.github_path %></h1>
-
-<p>
-  Parent: <%= link_to @fork.parent+'/'+@fork.parent_repo_name, @fork.parent_github_path%>.  
-</p>
-
-<% if @fork.active %>
-  <p>
+<h1>
+  <%= @fork.owner %> / <%= @fork.repo_name %>
+  <%= link_to "<i class='fa fa-github fa-lg'></i>".html_safe, @fork.github_path %>
+  <span class='pull-right'>
     <%= image_tag fork_badge_path(@fork, format: 'png'), :'data-toggle' => "modal", :'data-target' => "#badgeModal" %>
-  </p>
+  </span>
+</h1>
+
+<div class='well'>
   <p>
-    <%= @fork.behind_by %> commits behind. <%= link_to "View changes", @fork.comparison_url %>.
+    Forked from 
+    <strong><%= link_to @fork.parent+'/'+@fork.parent_repo_name, @fork.parent_github_path%></strong>
   </p>
   
-  <% if signed_in? %>
-    <p>
+  <p>
+    <% if @fork.active %>
+      This repository is
+      <% if @fork.current? %>
+        up to date with its parent.
+      <% else %>
+        <%= @fork.behind_by %> commits behind its parent. <%= link_to "View all the changes on GitHub", @fork.comparison_url %>.
+      <% end %>
+    <% else %>
+      Not currently being monitored by Forkbomb.
+    <% end %>
+  </p>
+
+  <% if @fork.active && signed_in? %>
+    <div>
       <%= link_to "<i class='fa fa-refresh'></i> Update Status".html_safe, 
-                   fork_refresh_path(@fork), method: :post, class: 'btn btn-primary' %>
+                   fork_refresh_path(@fork), method: :post, class: 'btn btn-warning' %>
       <%= link_to "<i class='fa fa-code-fork'></i> Generate Pull Request".html_safe, 
-                   fork_generate_path(@fork),  method: :post, class: 'btn btn-primary' if !@fork.current? %>
-    </p>
+                   fork_generate_path(@fork),  method: :post, class: 'btn btn-warning' if !@fork.current? %>
+    </div>
   <% end %>
-  
-<% end %>
+
+</div>
 
 
 <%= render 'badge_modal'%>
