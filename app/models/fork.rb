@@ -63,7 +63,27 @@ class Fork < ActiveRecord::Base
   
   def behind_by
     update_compare_state_from_github! if compare_state_out_of_date?
-    attributes[:behind_by]
+    read_attribute('behind_by')
+  end
+
+  def parent
+    load_fork_details! unless read_attribute('parent')
+    read_attribute('parent')
+  end
+
+  def parent_repo_name
+    load_fork_details! unless read_attribute('parent_repo_name')
+    read_attribute('parent_repo_name')
+  end
+
+  def default_branch
+    load_fork_details! unless read_attribute('default_branch')
+    read_attribute('default_branch')
+  end
+
+  def parent_default_branch
+    load_fork_details! unless read_attribute('parent_default_branch')
+    read_attribute('parent_default_branch')
   end
 
   def select_options
@@ -79,6 +99,21 @@ class Fork < ActiveRecord::Base
     end
   
     def update_compare_state_from_github!
+    end
+
+    def load_fork_details!
+      # Load details from github
+      response = Rails.application.github.repos.get(
+        user: owner,
+        repo: repo_name)
+      # Load data
+      data = {
+        default_branch:        response.default_branch,
+        parent:                response.parent.owner.login,
+        parent_repo_name:      response.parent.name,
+        parent_default_branch: response.parent.default_branch,
+      }
+      update_attributes! data
     end
 
     def set_update_frequencies
