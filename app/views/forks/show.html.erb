@@ -6,9 +6,12 @@
 
 <% if @fork.active %>
   <p>
-    <%= image_tag fork_badge_path(@fork, format: 'png')%>
+    <%= image_tag fork_badge_path(@fork, format: 'png'), :'data-toggle' => "modal", :'data-target' => "#badgeModal" %>
   </p>
   <p>
     <%= @fork.behind_by %> commits behind. <%= link_to "View changes", @fork.comparison_url %>.
   </p>
 <% end %>
+
+
+<%= render 'badge_modal'%>
