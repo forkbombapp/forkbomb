@@ -74,6 +74,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'delayed_job_active_record'
+gem 'rack-google-analytics'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
