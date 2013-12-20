@@ -61,3 +61,11 @@ select.update-frequency[disabled] {
 table.fork-list tr {
   background-color: white;  
 }
+
+img.avatar {
+  width: 80px;
+  height: 80px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
