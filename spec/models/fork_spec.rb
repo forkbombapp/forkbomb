@@ -58,7 +58,7 @@ describe Fork do
     it "should mark forks that are behind as not current", :vcr do
       fork = FactoryGirl.create(:fork, owner: "theodi", repo_name: 'panopticon', active: true)
       fork.current?.should be_false
-      fork.behind_by.should == 57
+      fork.behind_by.should == 60
     end
   
     it "should mark forks that are up to date as current", :vcr do

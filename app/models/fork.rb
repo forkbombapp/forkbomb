@@ -95,10 +95,21 @@ class Fork < ActiveRecord::Base
   private
   
     def compare_state_out_of_date?
-      active && (attributes[:behind].nil? || updated_at < 6.hours.ago)
+      active && (read_attribute('behind_by').nil? || updated_at < 6.hours.ago)
     end
   
     def update_compare_state_from_github!
+      # Load comparison from github
+      response = Rails.application.github.repos.commits.compare(
+        user: owner,
+        repo: repo_name,
+        base: "#{parent}:#{parent_default_branch}", 
+        head: "#{owner}:#{default_branch}")
+      # update
+      data = {
+        behind_by: response.behind_by.to_i
+      }
+      update_attributes!(data)
     end
 
     def load_fork_details!
