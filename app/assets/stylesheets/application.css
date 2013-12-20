@@ -16,7 +16,7 @@
  */
 
 /* avoid top navbar */ 
-body { padding-top: 70px; }
+body.with-navbar { padding-top: 70px; }
 
 select.update-frequency {
 	height: 22px;

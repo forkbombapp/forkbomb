@@ -14,5 +14,6 @@ class ApplicationController < ActionController::Base
   
   def index
     redirect_to forks_path and return if signed_in?
+    render layout: 'homepage'
   end
 end
