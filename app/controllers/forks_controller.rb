@@ -63,4 +63,9 @@ class ForksController < ApplicationController
     redirect_to fork_path(@fork)
   end
   
+  def generate
+    @fork = Fork.find_by_repo_path(params[:fork_id])
+    redirect_to @fork.generate_pr(true) || fork_path(@fork)
+  end
+
 end
