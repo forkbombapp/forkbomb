@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   def after_sign_in_path_for(resource)
-    '/forks'
+    forks_path
   end
   
   def sign_out
@@ -13,5 +13,6 @@ class ApplicationController < ActionController::Base
   end
   
   def index
+    redirect_to forks_path and return if signed_in?
   end
 end
