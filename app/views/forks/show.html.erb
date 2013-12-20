@@ -11,6 +11,14 @@
   <p>
     <%= @fork.behind_by %> commits behind. <%= link_to "View changes", @fork.comparison_url %>.
   </p>
+  
+  <% if signed_in? %>
+    <p>
+      <%= link_to "<i class='fa fa-refresh'></i> Update Status".html_safe, 
+                   fork_refresh_path(@fork), method: :post, class: 'btn btn-primary' %>
+    </p>
+  <% end %>
+  
 <% end %>
 
 

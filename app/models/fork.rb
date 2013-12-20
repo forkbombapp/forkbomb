@@ -100,8 +100,6 @@ class Fork < ActiveRecord::Base
     options
   end
   
-  private
-  
     def compare_state_out_of_date?
       active && (read_attribute('behind_by').nil? || updated_at < 6.hours.ago)
     end
@@ -120,6 +118,8 @@ class Fork < ActiveRecord::Base
       update_attributes!(data)
     end
 
+    private
+  
     def load_fork_details!
       # Load details from github
       response = Rails.application.github.repos.get(
