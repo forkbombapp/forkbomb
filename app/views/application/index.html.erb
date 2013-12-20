@@ -6,10 +6,11 @@
     <p>
       <%= link_to "<i class='fa fa-github fa-lg'></i> Sign in with Github".html_safe, user_omniauth_authorize_path(:github), class: "btn btn-primary btn-lg", role: "button" %>
     </p>
+    <div class="readme">
+      <%= Kramdown::Document.new(File.read('README.md')).to_html.html_safe %>
+    </div>
   </div>
 </div>
 
-<div class="readme">
-  <%= Kramdown::Document.new(File.read('README.md')).to_html.html_safe %>
-</div>
+
 
