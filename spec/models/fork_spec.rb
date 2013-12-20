@@ -29,6 +29,28 @@ describe Fork do
     
   end
   
+  context "testing status" do
+  
+    it "should mark forks that are behind as not current", :vcr do
+      fork = FactoryGirl.create(:fork, owner: "theodi", repo_name: 'panopticon', active: true)
+      fork.current?.should be_false
+      fork.behind_by.should == 57
+    end
+  
+    it "should mark forks that are up to date as current", :vcr do
+      fork = FactoryGirl.create(:fork, owner: "theodi", repo_name: 'capsulecrm', active: true)
+      fork.current?.should be_true
+      fork.behind_by.should == 0
+    end  
+    
+    it "should mark inactive forks as unknown", :vcr do
+      fork = FactoryGirl.create(:fork, owner: "theodi", repo_name: 'capsulecrm', active: false)
+      fork.current?.should be_true
+      fork.behind_by.should == nil
+    end  
+
+  end
+   
   it "should generate a param", :vcr do 
     fork = FactoryGirl.create(:fork, owner: 'batman', repo_name: 'batmobile')
     fork.to_param.should == "batman/batmobile"
