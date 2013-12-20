@@ -69,3 +69,13 @@ img.avatar {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
+
+.readme {
+  h1, img {
+    display: none;
+  }
+  p {
+    font-size: 80%;
+    margin-top: 20px;
+  }
+}
