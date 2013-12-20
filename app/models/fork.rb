@@ -19,9 +19,11 @@ class Fork < ActiveRecord::Base
     Fork.where(owner: user.login)
   end
   
-  def generate_pr
+  def generate_pr(manual = false)
     # get repository details
     repo = Rails.application.github.repos.get self.owner, self.repo_name
+
+    path = nil
 
     if repo.parent
       branch = repo.default_branch
@@ -29,19 +31,22 @@ class Fork < ActiveRecord::Base
       upstream_branch = repo.parent.default_branch
 
       begin
-        Rails.application.github.pulls.create(owner, repo_name,
+        response = Rails.application.github.pulls.create(owner, repo_name,
           title: 'Upstream changes',
           body: 'Automatically opened by http://forkbomb.io',
           head: "#{upstream_owner}:#{upstream_branch}",
           base: branch
         )
+        path = response.html_url
       rescue Github::Error::UnprocessableEntity => ex
         # absorb errors caused by already-open PRs or zero-size PRs
         raise unless ex.message.include?("A pull request already exists") || ex.message.include?("No commits between")
       end
 
     end
-    enqueue
+    enqueue unless manual
+    # return path
+    path
   end
   
   def to_param
@@ -100,8 +105,6 @@ class Fork < ActiveRecord::Base
     options
   end
   
-  private
-  
     def compare_state_out_of_date?
       active && (read_attribute('behind_by').nil? || updated_at < 6.hours.ago)
     end
@@ -120,6 +123,8 @@ class Fork < ActiveRecord::Base
       update_attributes!(data)
     end
 
+    private
+  
     def load_fork_details!
       # Load details from github
       response = Rails.application.github.repos.get(

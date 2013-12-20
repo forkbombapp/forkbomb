@@ -57,4 +57,15 @@ class ForksController < ApplicationController
     end
   end
   
+  def refresh
+    @fork = Fork.find_by_repo_path(params[:fork_id])
+    @fork.update_compare_state_from_github!
+    redirect_to fork_path(@fork)
+  end
+  
+  def generate
+    @fork = Fork.find_by_repo_path(params[:fork_id])
+    redirect_to @fork.generate_pr(true) || fork_path(@fork)
+  end
+
 end

@@ -10,6 +10,8 @@ Forkbomb::Application.routes.draw do
   
   resources :forks, :except => [:create, :new, :destroy], constraints: {id: /[\w\-]+\/[\w\-\.]+/} do
     get :badge
+    post :refresh
+    post :generate
   end
   
   # Example of regular route:
