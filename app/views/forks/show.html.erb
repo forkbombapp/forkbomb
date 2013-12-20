@@ -9,6 +9,6 @@
     <%= image_tag fork_badge_path(@fork, format: 'png')%>
   </p>
   <p>
-    <%= @fork.behind_by %> commits behind.  
+    <%= @fork.behind_by %> commits behind. <%= link_to "View changes", @fork.comparison_url %>.
   </p>
 <% end %>

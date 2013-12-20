@@ -61,6 +61,10 @@ class Fork < ActiveRecord::Base
     "https://github.com/#{parent}/#{parent_repo_name}"
   end
   
+  def comparison_url
+    "https://github.com/#{parent}/#{parent_repo_name}/compare/#{owner}:#{default_branch}...#{parent}:#{parent_default_branch}"
+  end
+  
   def current?
     behind_by == 0
   end
