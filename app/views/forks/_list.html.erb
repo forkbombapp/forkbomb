@@ -1,4 +1,4 @@
-<h2><%= image_tag user.avatar_url %> <%= user.login %></h2>
+<h2><%= image_tag user.avatar_url, class: 'avatar' %> <%= user.login %></h2>
 
 <% if repos.count == 0%>
   <p>No forks here!</p>
