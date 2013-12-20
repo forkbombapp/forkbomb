@@ -69,3 +69,9 @@ img.avatar {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
+
+.readme {
+  h1, img {
+    display: none;
+  }
+}
