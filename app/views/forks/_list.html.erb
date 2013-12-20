@@ -14,9 +14,9 @@
       <td><%= link_to repo.repo_name, repo %></td>
       <td>
         <%= form_for repo, remote: true do |f| %>
-        <div class="make-switch switch-mini status" data-repo="<%= repo.user.downcase %>-<%= repo.repo_name.downcase %>" data-on="primary">
+        <div class="make-switch switch-mini status" data-repo="<%= repo.owner.downcase %>-<%= repo.repo_name.downcase %>" data-on="primary">
             <%= f.hidden_field :repo_name %>
-            <%= f.hidden_field :user %>
+            <%= f.hidden_field :owner %>
             <%= f.check_box :active %>
         </div>
         <% end %>
@@ -24,9 +24,9 @@
       <td>
         <%= form_for repo, remote: true do |f| %>
           <%= f.hidden_field :repo_name %>
-          <%= f.hidden_field :user %>
+          <%= f.hidden_field :owner %>
           <%= f.select :update_frequency, repo.select_options, {}, 
-                       :class => 'update-frequency form-control', :disabled => repo.active.blank?, "data-repo" => "#{repo.user.downcase}-#{repo.repo_name.downcase}" 
+                       :class => 'update-frequency form-control', :disabled => repo.active.blank?, "data-repo" => "#{repo.owner.downcase}-#{repo.repo_name.downcase}" 
           %>
         <% end %>
       </td>

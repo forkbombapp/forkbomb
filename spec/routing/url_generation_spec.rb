@@ -5,7 +5,7 @@ describe "generating routes" do
   end
 
   it "generates correct URLs for forks" do
-    fork = FactoryGirl.build(:fork, user: 'Floppy', repo_name: 'such-travis')
+    fork = FactoryGirl.build(:fork, owner: 'Floppy', repo_name: 'such-travis')
     fork_path(fork).should == '/forks/Floppy/such-travis'
   end
 

@@ -26,7 +26,7 @@ class ForksController < ApplicationController
     if current_user
       fork = Fork.where(
                 :repo_name => params[:fork][:repo_name],
-                :user      => params[:fork][:user]
+                :owner      => params[:fork][:owner]
               ).first
                       
       fork.update_attributes(params[:fork].permit(:active, :update_frequency))
