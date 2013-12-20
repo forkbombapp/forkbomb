@@ -32,7 +32,7 @@ Then(/^the select box should be enabled$/) do
 end
 
 Then(/^the repo should be active$/) do
-  Fork.where(:repo_name => @repo, :user => @user).first.active.should == true
+  Fork.where(:repo_name => @repo, :owner => @user).first.active.should == true
 end
 
 When(/^I set the repo update frequency to "(.*?)"$/) do |frequency|
@@ -41,13 +41,13 @@ When(/^I set the repo update frequency to "(.*?)"$/) do |frequency|
 end
 
 Then(/^the repo should have an update frequency of "(.*?)"$/) do |frequency|
-  Fork.where(:repo_name => @repo, :user => @user).first.update_frequency.should == frequency
+  Fork.where(:repo_name => @repo, :owner => @user).first.update_frequency.should == frequency
 end
 
 Given(/^the repo "(.*?)" under the user "(.*?)" is enabled$/) do |repo, user|
   @user = user
   @repo = repo
-  @fork = Fork.where(:repo_name => repo, :user => user).first
+  @fork = Fork.where(:repo_name => repo, :owner => user).first
   @fork.active = true
   @fork.save
 end

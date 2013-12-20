@@ -37,6 +37,7 @@ deploy:
   provider: heroku
   api_key:
     secure: ee3jSrBVMbeyZgGdjUXtO9EEKpyNKTpUPhDfAA3VTeuSBTfSudj8K5oDCdISx4GmvPQqCSatGKnrvXMrde9ldwc+QqidS4ruXmrlr2yBhk6rPHKdNeF2FX6xvBn13A/ckQeeE7xJSIyzO5aR+xsM3SL+jFmnaoRwa9sdlBSgC8w=
+  run: "rake db:migrate"
   app: forkbomb
   on:
     repo: theodi/forkbomb

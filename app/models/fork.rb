@@ -4,24 +4,24 @@ class Fork < ActiveRecord::Base
   after_save :enqueue
   
   def self.get_for_user(user)
-    user_forks = Fork.where(user: user.login)
+    user_forks = Fork.where(owner: user.login)
     
     if user_forks.count == 0 || user_forks.last.updated_at <= 1.day.ago 
       forks = Rails.application.github.repos.list(user: user.login, auto_pagination: true).select{|r| r.fork === true }
       forks.each do |fork|
         fork = Fork.find_or_initialize_by(
           repo_name: fork.name,
-          user: user.login
+          owner: user.login
         )
         fork.save
       end
     end
-    Fork.where(user: user.login)
+    Fork.where(owner: user.login)
   end
   
   def generate_pr
     # get repository details
-    repo = Rails.application.github.repos.get self.user, self.repo_name
+    repo = Rails.application.github.repos.get self.owner, self.repo_name
 
     if repo.parent
       branch = repo.default_branch
@@ -29,7 +29,7 @@ class Fork < ActiveRecord::Base
       upstream_branch = repo.parent.default_branch
 
       begin
-        Rails.application.github.pulls.create(user, repo_name,
+        Rails.application.github.pulls.create(owner, repo_name,
           title: 'Upstream changes',
           body: 'Automatically opened by http://forkbomb.io',
           head: "#{upstream_owner}:#{upstream_branch}",
@@ -45,22 +45,47 @@ class Fork < ActiveRecord::Base
   end
   
   def to_param
-    "#{user}/#{repo_name}"
+    "#{owner}/#{repo_name}"
   end
   
   def self.find_by_repo_path(path)
-    user, repo = path.split('/', 2)
-    Fork.where(user: user, repo_name: repo).first
+    owner, repo = path.split('/', 2)
+    Fork.where(owner: owner, repo_name: repo).first
   end
 
   def github_path
-    "https://github.com/#{user}/#{repo_name}"
+    "https://github.com/#{owner}/#{repo_name}"
   end
   
   def current?
-    true
+    behind_by == 0
   end
   
+  def behind_by
+    update_compare_state_from_github! if compare_state_out_of_date?
+    read_attribute('behind_by')
+  end
+
+  def parent
+    load_fork_details! unless read_attribute('parent')
+    read_attribute('parent')
+  end
+
+  def parent_repo_name
+    load_fork_details! unless read_attribute('parent_repo_name')
+    read_attribute('parent_repo_name')
+  end
+
+  def default_branch
+    load_fork_details! unless read_attribute('default_branch')
+    read_attribute('default_branch')
+  end
+
+  def parent_default_branch
+    load_fork_details! unless read_attribute('parent_default_branch')
+    read_attribute('parent_default_branch')
+  end
+
   def select_options
     options = {'Update Frequency' => nil, 'Daily' => 'daily', 'Weekly' => 'weekly', 'Monthly' => 'monthly'}
     options.delete('Update Frequency') if self.active == true
@@ -69,9 +94,46 @@ class Fork < ActiveRecord::Base
   
   private
   
+    def compare_state_out_of_date?
+      active && (read_attribute('behind_by').nil? || updated_at < 6.hours.ago)
+    end
+  
+    def update_compare_state_from_github!
+      # Load comparison from github
+      response = Rails.application.github.repos.commits.compare(
+        user: owner,
+        repo: repo_name,
+        base: "#{parent}:#{parent_default_branch}", 
+        head: "#{owner}:#{default_branch}")
+      # update
+      data = {
+        behind_by: response.behind_by.to_i
+      }
+      update_attributes!(data)
+    end
+
+    def load_fork_details!
+      # Load details from github
+      response = Rails.application.github.repos.get(
+        user: owner,
+        repo: repo_name)
+      # Load data
+      data = {
+        default_branch:        response.default_branch,
+        parent:                response.parent.owner.login,
+        parent_repo_name:      response.parent.name,
+        parent_default_branch: response.parent.default_branch,
+      }
+      update_attributes! data
+    end
+
     def set_update_frequencies
-       self.update_frequency = nil if self.active == false
-       self.update_frequency = "daily" if self.active == true && self.update_frequency.nil?
+      if self.active
+        self.update_frequency ||= "daily"
+      else
+        self.update_frequency = nil
+        self.behind_by = nil
+      end
     end
     
     def enqueue
