@@ -29,3 +29,7 @@ select.update-frequency {
 select.update-frequency[disabled] {
 	color: #999;
 }
+
+#logo {
+  max-width: 100%;
+}
