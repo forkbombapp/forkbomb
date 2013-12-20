@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131219134327) do
+ActiveRecord::Schema.define(version: 20131220065901) do
 
   create_table "delayed_jobs", force: true do |t|
     t.integer  "priority",   default: 0, null: false
@@ -36,6 +36,11 @@ ActiveRecord::Schema.define(version: 20131219134327) do
     t.datetime "updated_at"
     t.boolean  "active"
     t.string   "update_frequency"
+    t.string   "parent"
+    t.integer  "behind_by"
+    t.string   "parent_default_branch"
+    t.string   "default_branch"
+    t.string   "parent_repo_name"
   end
 
   create_table "users", force: true do |t|
