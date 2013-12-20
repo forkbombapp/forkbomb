@@ -128,8 +128,12 @@ class Fork < ActiveRecord::Base
     end
 
     def set_update_frequencies
-       self.update_frequency = nil if self.active == false
-       self.update_frequency = "daily" if self.active == true && self.update_frequency.nil?
+      if self.active
+        self.update_frequency ||= "daily"
+      else
+        self.update_frequency = nil
+        self.behind_by = nil
+      end
     end
     
     def enqueue
