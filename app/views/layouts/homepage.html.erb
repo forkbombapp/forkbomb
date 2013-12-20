@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Forkbomb</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+<% if flash[:notice] %>
+    <div class="container">
+      <div class="notice"><%= flash[:notice] %></div>
+    </div>
+<% end %>
+
+<div class="container">
+
+  <%= yield %>
+
+  <footer class="text-center">
+    <p>An <%= link_to 'Open Data Institute', 'http://theodi.org' %> Experiment |
+      Design by <%= link_to 'Kimberly C. Abbott', 'http://www.kimberlycabbott.com/' %> |
+    Fork Forkbomb on <%= link_to 'Github', 'https://github.com/theodi/forkbomb' %></p>
+  </footer>
+</div>
+
+</body>
+</html>

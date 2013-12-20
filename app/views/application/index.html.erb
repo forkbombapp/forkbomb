@@ -1,6 +1,6 @@
 <div class="jumbotron">
   <div class="container">
-    <%= image_tag 'logo_375.png', alt: 'forkbomb' %>
+    <%= image_tag 'logo.svg', id: 'logo', alt: 'forkbomb' %>
     <p>Ease the pain of maintaining long-running GitHub forks.</p>
     <p>
       <%= link_to "<i class='fa fa-github fa-lg'></i> Sign in with Github".html_safe, user_omniauth_authorize_path(:github), class: "btn btn-primary btn-lg", role: "button" %>
