@@ -33,3 +33,8 @@ select.update-frequency[disabled] {
 #logo {
   max-width: 100%;
 }
+
+#logo-navbar {
+  padding-top: 10px;
+  height: 40px;
+}
