@@ -4,24 +4,24 @@ class Fork < ActiveRecord::Base
   after_save :enqueue
   
   def self.get_for_user(user)
-    user_forks = Fork.where(user: user.login)
+    user_forks = Fork.where(owner: user.login)
     
     if user_forks.count == 0 || user_forks.last.updated_at <= 1.day.ago 
       forks = Rails.application.github.repos.list(user: user.login, auto_pagination: true).select{|r| r.fork === true }
       forks.each do |fork|
         fork = Fork.find_or_initialize_by(
           repo_name: fork.name,
-          user: user.login
+          owner: user.login
         )
         fork.save
       end
     end
-    Fork.where(user: user.login)
+    Fork.where(owner: user.login)
   end
   
   def generate_pr
     # get repository details
-    repo = Rails.application.github.repos.get self.user, self.repo_name
+    repo = Rails.application.github.repos.get self.owner, self.repo_name
 
     if repo.parent
       branch = repo.default_branch
@@ -29,7 +29,7 @@ class Fork < ActiveRecord::Base
       upstream_branch = repo.parent.default_branch
 
       begin
-        Rails.application.github.pulls.create(user, repo_name,
+        Rails.application.github.pulls.create(owner, repo_name,
           title: 'Upstream changes',
           body: 'Automatically opened by http://forkbomb.io',
           head: "#{upstream_owner}:#{upstream_branch}",
@@ -45,16 +45,16 @@ class Fork < ActiveRecord::Base
   end
   
   def to_param
-    "#{user}/#{repo_name}"
+    "#{owner}/#{repo_name}"
   end
   
   def self.find_by_repo_path(path)
-    user, repo = path.split('/', 2)
-    Fork.where(user: user, repo_name: repo).first
+    owner, repo = path.split('/', 2)
+    Fork.where(owner: owner, repo_name: repo).first
   end
 
   def github_path
-    "https://github.com/#{user}/#{repo_name}"
+    "https://github.com/#{owner}/#{repo_name}"
   end
   
   def current?

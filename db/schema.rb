@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20131219134327) do
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority"
 
   create_table "forks", force: true do |t|
-    t.string   "user"
+    t.string   "owner"
     t.string   "repo_name"
     t.datetime "created_at"
     t.datetime "updated_at"
