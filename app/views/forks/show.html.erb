@@ -1,3 +1,17 @@
 <h1><%= @fork.owner %> / <%= @fork.repo_name %> <%= link_to "<i class='fa fa-github fa-lg'></i>".html_safe, @fork.github_path %></h1>
 
-<%= image_tag fork_badge_path(@fork, format: 'png')%>
+<p>
+  Parent: <%= link_to @fork.parent+'/'+@fork.parent_repo_name, @fork.parent_github_path%>.  
+</p>
+
+<% if @fork.active %>
+  <p>
+    <%= image_tag fork_badge_path(@fork, format: 'png'), :'data-toggle' => "modal", :'data-target' => "#badgeModal" %>
+  </p>
+  <p>
+    <%= @fork.behind_by %> commits behind. <%= link_to "View changes", @fork.comparison_url %>.
+  </p>
+<% end %>
+
+
+<%= render 'badge_modal'%>
