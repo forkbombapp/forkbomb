@@ -1,29 +1,80 @@
 require 'spec_helper'
 
 describe Fork do
-  before(:each) do
-    @user = Rails.application.github.users.get user: 'pezholio'
-  end
   
-  it "should retrieve a list of forks", :vcr do
-    forks = Fork.get_for_user(@user)
-    forks.count.should == 8
-  end
+  context "with user" do
   
-  it "should fetch forks from the database if a cached version is present", :vcr do
-    Fork.get_for_user(@user)
-    Rails.application.github.should_not receive(:repos)
-    Fork.get_for_user(@user)
-  end
+    before(:each) do
+      @user = Rails.application.github.users.get user: 'pezholio'
+    end
   
-  it "should contact the API if the cache hasn't been updated in more than 1 day", :vcr do
-    Fork.get_for_user(@user)
-    Timecop.freeze(Date.today + 2) do
-      Rails.application.github.repos.should receive(:list).and_call_original 
+    it "should retrieve a list of forks", :vcr do
+      forks = Fork.get_for_user(@user)
+      forks.count.should == 8
+    end
+  
+    it "should fetch forks from the database if a cached version is present", :vcr do
+      Fork.get_for_user(@user)
+      Rails.application.github.should_not receive(:repos)
       Fork.get_for_user(@user)
     end
+  
+    it "should contact the API if the cache hasn't been updated in more than 1 day", :vcr do
+      Fork.get_for_user(@user)
+      Timecop.freeze(Date.today + 2) do
+        Rails.application.github.repos.should receive(:list).and_call_original 
+        Fork.get_for_user(@user)
+      end
+    end
+    
   end
   
+  context "loading github metadata" do
+    
+    before(:each) do
+      @fork = FactoryGirl.create(:fork, owner: "theodi", repo_name: 'panopticon')
+    end
+  
+    it "should load parent owner on demand", :vcr do
+      @fork.parent.should == 'alphagov'
+    end
+    
+    it "should load parent repo name on demand", :vcr do
+      @fork.parent_repo_name.should == 'panopticon'
+    end
+    
+    it "should load parent branch on demand", :vcr do
+      @fork.parent_default_branch.should == 'master'
+    end
+    
+    it "should load default branch on demand", :vcr do
+      @fork.default_branch.should == 'master'
+    end
+    
+  end
+  
+  context "testing status" do
+  
+    it "should mark forks that are behind as not current", :vcr do
+      fork = FactoryGirl.create(:fork, owner: "theodi", repo_name: 'panopticon', active: true)
+      fork.current?.should be_false
+      fork.behind_by.should == 60
+    end
+  
+    it "should mark forks that are up to date as current", :vcr do
+      fork = FactoryGirl.create(:fork, owner: "theodi", repo_name: 'capsulecrm', active: true)
+      fork.current?.should be_true
+      fork.behind_by.should == 0
+    end  
+    
+    it "should mark inactive forks as unknown", :vcr do
+      fork = FactoryGirl.create(:fork, owner: "theodi", repo_name: 'capsulecrm', active: false)
+      fork.current?.should be_false
+      fork.behind_by.should == nil
+    end  
+
+  end
+   
   it "should generate a param", :vcr do 
     fork = FactoryGirl.create(:fork, owner: 'batman', repo_name: 'batmobile')
     fork.to_param.should == "batman/batmobile"

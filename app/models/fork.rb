@@ -58,9 +58,34 @@ class Fork < ActiveRecord::Base
   end
   
   def current?
-    true
+    behind_by == 0
   end
   
+  def behind_by
+    update_compare_state_from_github! if compare_state_out_of_date?
+    read_attribute('behind_by')
+  end
+
+  def parent
+    load_fork_details! unless read_attribute('parent')
+    read_attribute('parent')
+  end
+
+  def parent_repo_name
+    load_fork_details! unless read_attribute('parent_repo_name')
+    read_attribute('parent_repo_name')
+  end
+
+  def default_branch
+    load_fork_details! unless read_attribute('default_branch')
+    read_attribute('default_branch')
+  end
+
+  def parent_default_branch
+    load_fork_details! unless read_attribute('parent_default_branch')
+    read_attribute('parent_default_branch')
+  end
+
   def select_options
     options = {'Update Frequency' => nil, 'Daily' => 'daily', 'Weekly' => 'weekly', 'Monthly' => 'monthly'}
     options.delete('Update Frequency') if self.active == true
@@ -69,9 +94,46 @@ class Fork < ActiveRecord::Base
   
   private
   
+    def compare_state_out_of_date?
+      active && (read_attribute('behind_by').nil? || updated_at < 6.hours.ago)
+    end
+  
+    def update_compare_state_from_github!
+      # Load comparison from github
+      response = Rails.application.github.repos.commits.compare(
+        user: owner,
+        repo: repo_name,
+        base: "#{parent}:#{parent_default_branch}", 
+        head: "#{owner}:#{default_branch}")
+      # update
+      data = {
+        behind_by: response.behind_by.to_i
+      }
+      update_attributes!(data)
+    end
+
+    def load_fork_details!
+      # Load details from github
+      response = Rails.application.github.repos.get(
+        user: owner,
+        repo: repo_name)
+      # Load data
+      data = {
+        default_branch:        response.default_branch,
+        parent:                response.parent.owner.login,
+        parent_repo_name:      response.parent.name,
+        parent_default_branch: response.parent.default_branch,
+      }
+      update_attributes! data
+    end
+
     def set_update_frequencies
-       self.update_frequency = nil if self.active == false
-       self.update_frequency = "daily" if self.active == true && self.update_frequency.nil?
+      if self.active
+        self.update_frequency ||= "daily"
+      else
+        self.update_frequency = nil
+        self.behind_by = nil
+      end
     end
     
     def enqueue

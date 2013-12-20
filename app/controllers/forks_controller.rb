@@ -45,8 +45,15 @@ class ForksController < ApplicationController
 
   def badge
     @fork = Fork.find_by_repo_path(params[:fork_id])
+    if @fork.current?
+      state_str = 'current'
+    elsif @fork.behind_by.nil?
+      state_str = 'unknown'
+    else
+      state_str = 'behind'
+    end      
     respond_to do |wants|
-      wants.png { send_file File.join(Rails.root, 'app', 'views', 'forks', (@fork.current? ? 'current.png' : 'outdated.png')), disposition: 'inline' }
+      wants.png { send_file File.join(Rails.root, 'app', 'views', 'forks', "#{state_str}.png"), disposition: 'inline' }
     end
   end
   
