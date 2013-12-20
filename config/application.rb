@@ -27,5 +27,9 @@ module Forkbomb
 
     config.autoload_paths += %W(#{config.root}/lib)
 
+    if ENV['FORKBOMB_ANALYTICS_KEY']
+      config.middleware.use Rack::GoogleAnalytics, :tracker => ENV['FORKBOMB_ANALYTICS_KEY']
+    end
+
   end
 end
