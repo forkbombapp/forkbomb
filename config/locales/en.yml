@@ -21,3 +21,8 @@
 
 en:
   hello: "Hello world"
+  fork_status: "Fork Status"
+  markdown: "Markdown"
+  textile: "Textile"
+  rdoc: "RDoc"
+  html: "HTML"
