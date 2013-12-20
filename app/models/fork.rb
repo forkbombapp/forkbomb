@@ -58,9 +58,14 @@ class Fork < ActiveRecord::Base
   end
   
   def current?
-    true
+    behind_by == 0
   end
   
+  def behind_by
+    update_compare_state_from_github! if compare_state_out_of_date?
+    attributes[:behind_by]
+  end
+
   def select_options
     options = {'Update Frequency' => nil, 'Daily' => 'daily', 'Weekly' => 'weekly', 'Monthly' => 'monthly'}
     options.delete('Update Frequency') if self.active == true
@@ -69,6 +74,13 @@ class Fork < ActiveRecord::Base
   
   private
   
+    def compare_state_out_of_date?
+      active && (attributes[:behind].nil? || updated_at < 6.hours.ago)
+    end
+  
+    def update_compare_state_from_github!
+    end
+
     def set_update_frequencies
        self.update_frequency = nil if self.active == false
        self.update_frequency = "daily" if self.active == true && self.update_frequency.nil?

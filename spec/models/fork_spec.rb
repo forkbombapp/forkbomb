@@ -45,7 +45,7 @@ describe Fork do
     
     it "should mark inactive forks as unknown", :vcr do
       fork = FactoryGirl.create(:fork, owner: "theodi", repo_name: 'capsulecrm', active: false)
-      fork.current?.should be_true
+      fork.current?.should be_false
       fork.behind_by.should == nil
     end  
 
