@@ -16,7 +16,7 @@ class Fork < ActiveRecord::Base
         fork.save
       end
     end
-    Fork.where(owner: user.login)
+    Fork.where(owner: user.login).order(:repo_name)
   end
   
   def generate_pr(manual = false)
