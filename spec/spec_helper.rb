@@ -5,7 +5,6 @@ Coveralls.wear_merged!('rails')
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
-require 'rspec/autorun'
 require 'vcr'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
@@ -57,8 +56,10 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 
-  config.treat_symbols_as_metadata_keys_with_true_values = true # until rspec 3
-
   config.include Rails.application.routes.url_helpers
 
+  config.mock_with :rspec do |mocks|
+    mocks.verify_partial_doubles = true
+  end
+  
 end
