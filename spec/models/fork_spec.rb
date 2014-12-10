@@ -22,7 +22,7 @@ describe Fork do
     it "should contact the API if the cache hasn't been updated in more than 1 day", :vcr do
       Fork.get_for_user(@user)
       Timecop.freeze(Date.today + 2) do
-        Rails.application.github.repos.should receive(:list).and_call_original 
+        expect(Rails.application.github).to receive(:repos).and_call_original
         Fork.get_for_user(@user)
       end
     end
