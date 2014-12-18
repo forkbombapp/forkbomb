@@ -41,15 +41,12 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :development, :test do
-  gem 'sqlite3'
-end
-
 group :development do
   gem 'travis'
 end
 
-group :test do
+group :development, :test do
+  gem 'sqlite3'
   gem 'webmock'
   gem 'vcr'
   gem 'rspec-rails'
