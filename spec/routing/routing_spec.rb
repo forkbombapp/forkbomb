@@ -1,7 +1,7 @@
-describe "routes" do
+describe "routes", type: :routing  do
     
   it "routes /fork to index action" do
-    get('/forks').should route_to :controller => 'forks', :action => 'index'
+    expect(get:'/forks').to route_to :controller => 'forks', :action => 'index'
   end
 
   {
@@ -20,20 +20,20 @@ describe "routes" do
     if routable
 
       it "routes /forks/#{fork_path} to show action" do
-        get("/forks/#{fork_path}").should route_to :controller => 'forks', :action => 'show', :id => fork_path
+        expect(get: "/forks/#{fork_path}").to route_to :controller => 'forks', :action => 'show', :id => fork_path
       end
 
     else
 
       it "/forks/#{fork_path} should not route" do
-        get("/forks/#{fork_path}").should_not be_routable
+        expect(get:"/forks/#{fork_path}").not_to be_routable
       end
 
     end
   end
 
   it "routes /forks/Floppy/such-travis/badge.png to badge action" do
-    get("/forks/Floppy/such-travis/badge.png").should route_to :controller => 'forks', :action => 'badge', :fork_id => "Floppy/such-travis", :format => 'png'
+    expect(get:"/forks/Floppy/such-travis/badge.png").to route_to :controller => 'forks', :action => 'badge', :fork_id => "Floppy/such-travis", :format => 'png'
   end
 
 

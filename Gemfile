@@ -32,8 +32,8 @@ gem 'jbuilder', '~> 1.2'
 gem "github_api", '~> 0.11'
 
 gem 'bootstrap-sass', '~> 3.0.3'
-gem 'font-awesome-rails'
-gem 'bootstrap-switch-rails'
+gem 'font-awesome-rails', '~> 4.0.3'
+gem 'bootstrap-switch-rails', '~> 1.9.0'
 gem 'kramdown'
 
 group :doc do
@@ -41,15 +41,12 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :development, :test do
-  gem 'sqlite3'
-end
-
 group :development do
   gem 'travis'
 end
 
-group :test do
+group :development, :test do
+  gem 'sqlite3'
   gem 'webmock'
   gem 'vcr'
   gem 'rspec-rails'

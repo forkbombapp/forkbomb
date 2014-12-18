@@ -22,7 +22,7 @@ describe Fork do
     it "should contact the API if the cache hasn't been updated in more than 1 day", :vcr do
       Fork.get_for_user(@user)
       Timecop.freeze(Date.today + 2) do
-        Rails.application.github.repos.should receive(:list).and_call_original 
+        expect(Rails.application.github).to receive(:repos).and_call_original
         Fork.get_for_user(@user)
       end
     end
@@ -57,19 +57,19 @@ describe Fork do
   
     it "should mark forks that are behind as not current", :vcr do
       fork = FactoryGirl.create(:fork, owner: "theodi", repo_name: 'panopticon', active: true)
-      fork.current?.should be_false
+      fork.current?.should eq false
       fork.behind_by.should == 60
     end
   
     it "should mark forks that are up to date as current", :vcr do
       fork = FactoryGirl.create(:fork, owner: "theodi", repo_name: 'capsulecrm', active: true)
-      fork.current?.should be_true
+      fork.current?.should eq true
       fork.behind_by.should == 0
     end  
     
     it "should mark inactive forks as unknown", :vcr do
       fork = FactoryGirl.create(:fork, owner: "theodi", repo_name: 'capsulecrm', active: false)
-      fork.current?.should be_false
+      fork.current?.should eq false
       fork.behind_by.should == nil
     end  
 
