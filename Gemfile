@@ -4,7 +4,7 @@ ruby "2.1.4"
 #ruby-gemset=forkbomb
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.0.2'
+gem 'rails', '~> 4.1.11'
 
 gem 'dotenv-rails'
 
