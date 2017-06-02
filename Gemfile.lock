@@ -145,10 +145,10 @@ GEM
     highline (1.7.8)
     hike (1.2.3)
     hitimes (1.2.2)
-    i18n (0.6.11)
-    jbuilder (1.5.3)
+    i18n (0.8.4)
+    jbuilder (2.6.4)
       activesupport (>= 3.0.0)
-      multi_json (>= 1.2.0)
+      multi_json (>= 1.2)
     jquery-rails (3.1.2)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
@@ -311,7 +311,7 @@ GEM
       coffee-rails
     typhoeus (0.8.0)
       ethon (>= 0.8.0)
-    tzinfo (0.3.42)
+    tzinfo (0.3.53)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
     vcr (3.0.3)
@@ -346,7 +346,7 @@ DEPENDENCIES
   guard
   guard-cucumber
   guard-rspec
-  jbuilder (~> 1.2)
+  jbuilder (~> 2.6)
   jquery-rails
   kramdown
   omniauth
