@@ -316,7 +316,7 @@ GEM
     tzinfo (0.3.42)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
-    vcr (2.9.3)
+    vcr (3.0.3)
     warden (1.2.3)
       rack (>= 1.0)
     webmock (1.20.4)
