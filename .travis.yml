@@ -1,10 +1,5 @@
 sudo: false
 cache: bundler
-after_success:
-- '[ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] && curl -v -X DELETE -u $GITHUB_USER:$GITHUB_PASSWORD
-  "https://api.github.com/repos/$TRAVIS_REPO_SLUG/git/refs/tags/CURRENT"'
-- '[ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] && curl -v -X POST -d ''{"ref":"refs/tags/CURRENT","sha":"''$TRAVIS_COMMIT''"}''
-  --header "Content-Type:application/json" -u $GITHUB_USER:$GITHUB_PASSWORD "https://api.github.com/repos/$TRAVIS_REPO_SLUG/git/refs"'
 env:
   global:
   - RAILS_ENV=test
@@ -17,22 +12,3 @@ env:
 language: ruby
 rvm:
 - 2.1.4
-notifications:
-  irc:
-    channels:
-      - "irc.freenode.net#theodi"
-    template:
-      - "%{repository} %{branch} - %{message} %{build_url}"
-    on_success: change
-    on_failure: always
-deploy:
-  provider: heroku
-  api_key:
-    secure: ee3jSrBVMbeyZgGdjUXtO9EEKpyNKTpUPhDfAA3VTeuSBTfSudj8K5oDCdISx4GmvPQqCSatGKnrvXMrde9ldwc+QqidS4ruXmrlr2yBhk6rPHKdNeF2FX6xvBn13A/ckQeeE7xJSIyzO5aR+xsM3SL+jFmnaoRwa9sdlBSgC8w=
-  run: "rake db:migrate"
-  app: forkbomb
-  on:
-    repo: theodi/forkbomb
-branches:
-  except:
-    - CURRENT
