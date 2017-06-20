@@ -290,7 +290,7 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.6)
     tilt (1.4.1)
-    timecop (0.7.1)
+    timecop (0.8.1)
     timers (4.0.1)
       hitimes
     tins (1.14.0)
