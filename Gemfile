@@ -33,7 +33,7 @@ gem "github_api", '~> 0.17'
 
 gem 'bootstrap-sass', '~> 3.0.3'
 gem 'font-awesome-rails', '~> 4.0.3'
-gem 'bootstrap-switch-rails', '~> 1.9.0'
+gem 'bootstrap-switch-rails', '~> 3.3.3'
 gem 'kramdown'
 
 group :doc do

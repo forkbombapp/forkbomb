@@ -31,7 +31,7 @@ GEM
     bcrypt (3.1.9)
     bootstrap-sass (3.0.3.0)
       sass (~> 3.2)
-    bootstrap-switch-rails (1.9.0)
+    bootstrap-switch-rails (3.3.3)
     builder (3.1.4)
     capybara (2.4.4)
       mime-types (>= 1.16)
@@ -328,7 +328,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass (~> 3.0.3)
-  bootstrap-switch-rails (~> 1.9.0)
+  bootstrap-switch-rails (~> 3.3.3)
   coffee-rails (~> 4.0.0)
   coveralls
   cucumber-rails
