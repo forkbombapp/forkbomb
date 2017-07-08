@@ -154,7 +154,7 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.6)
     jwt (1.5.6)
-    kramdown (1.13.2)
+    kramdown (1.14.0)
     launchy (2.4.3)
       addressable (~> 2.3)
     listen (3.1.5)
@@ -293,7 +293,9 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.6)
     tilt (1.4.1)
-    timecop (0.8.1)
+    timecop (0.9.1)
+    timers (4.0.1)
+      hitimes
     tins (1.14.0)
     travis (1.8.8)
       backports
@@ -364,3 +366,6 @@ DEPENDENCIES
   uglifier (>= 3.2.0)
   vcr
   webmock
+
+RUBY VERSION
+   ruby 2.4.1p111
