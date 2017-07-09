@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.1.10"
+ruby "2.2.6"
 #ruby-gemset=forkbomb
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
