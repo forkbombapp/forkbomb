@@ -50,6 +50,8 @@ group :development, :test do
   gem 'webmock'
   gem 'vcr'
   gem 'rspec-rails'
+  gem 'minitest' #temporary until rspec update
+  gem 'test-unit' #temporary until rspec update
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'coveralls', require: false
