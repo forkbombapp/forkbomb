@@ -149,6 +149,7 @@ GEM
     hashdiff (0.3.4)
     hashie (3.5.5)
     highline (1.7.8)
+    hike (1.2.3)
     i18n (0.8.5)
     jbuilder (2.6.4)
       activesupport (>= 3.0.0)
@@ -307,8 +308,9 @@ GEM
       launchy (~> 2.1)
       pusher-client (~> 0.4)
       typhoeus (~> 0.6, >= 0.6.8)
-    turbolinks (2.5.3)
-      coffee-rails
+    turbolinks (5.0.1)
+      turbolinks-source (~> 5)
+    turbolinks-source (5.0.3)
     typhoeus (0.8.0)
       ethon (>= 0.8.0)
     tzinfo (0.3.53)
@@ -372,4 +374,4 @@ RUBY VERSION
    ruby 2.2.6p396
 
 BUNDLED WITH
-   1.14.6
+   1.15.1
