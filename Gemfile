@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.1.10"
+ruby "2.2.6"
 #ruby-gemset=forkbomb
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -49,7 +49,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'webmock'
   gem 'vcr'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.6'
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'coveralls', require: false
