@@ -27,10 +27,13 @@ GEM
       tzinfo (~> 0.3.37)
     addressable (2.4.0)
     arel (4.0.2)
+    autoprefixer-rails (7.1.2.1)
+      execjs
     backports (3.8.0)
     bcrypt (3.1.11)
-    bootstrap-sass (3.0.3.0)
-      sass (~> 3.2)
+    bootstrap-sass (3.3.5)
+      autoprefixer-rails (>= 5.0.0.1)
+      sass (>= 3.2.19)
     bootstrap-switch-rails (1.9.0)
     builder (3.1.4)
     capybara (2.14.4)
@@ -334,7 +337,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass (~> 3.0.3)
+  bootstrap-sass (~> 3.3.5)
   bootstrap-switch-rails (~> 1.9.0)
   coffee-rails (~> 4.2.2)
   coveralls
