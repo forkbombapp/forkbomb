@@ -28,7 +28,7 @@ When(/^I click the slider for the repo "(.*?)" under the user "(.*?)"$/) do |rep
 end
 
 Then(/^the select box should be enabled$/) do
-  find("select[data-repo=#{@user.downcase}-#{@repo.downcase}]")['disabled'].should == nil
+  find("select[data-repo=#{@user.downcase}-#{@repo.downcase}]")['disabled'].should == false
 end
 
 Then(/^the repo should be active$/) do
@@ -72,5 +72,5 @@ Then(/^the repo should have an update frequency of nil$/) do
 end
 
 Then(/^the select box should be disabled$/) do
-  find("select[data-repo=#{@user.downcase}-#{@repo.downcase}]")['disabled'].should == "disabled"
+  find("select[data-repo=#{@user.downcase}-#{@repo.downcase}]")['disabled'].should == true
 end
