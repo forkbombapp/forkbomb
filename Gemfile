@@ -49,7 +49,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'webmock'
   gem 'vcr'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.6'
   gem 'minitest' #temporary until rspec update
   gem 'test-unit' #temporary until rspec update
   gem 'cucumber-rails', require: false
