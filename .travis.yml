@@ -11,4 +11,4 @@ env:
   - secure: bsxNCCsPgg7qHqSf0Zu22V015ghMvoFn9CLYNzmAsr8YtEp4EvxR4EUEAJk2qFKPJTqiE+k8gQ/dU2v0EKnFjqXgSeiTQO+JiGqP6qqgVf7Y8hUYkzjjF6I5pb6NothLznT1WEKljt89IeiJNCHoREbPgGub/EVkHxLRxxUD7hI=
 language: ruby
 rvm:
-- 2.1.10
+- 2.2.6
