@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.2.6"
-#ruby-gemset=forkbomb
+ruby "2.2.7"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.0.2'
