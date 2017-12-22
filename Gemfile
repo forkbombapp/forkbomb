@@ -3,12 +3,12 @@ source 'https://rubygems.org'
 ruby "2.2.7"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.0.2'
+gem 'rails', '~> 4.2.10'
 
 gem 'dotenv-rails'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0.6'
+gem 'sass-rails', '~> 5.0.7'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 3.2.0'
@@ -48,7 +48,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'webmock'
   gem 'vcr'
-  gem 'rspec-rails', '~> 3.6'
+  gem 'rspec-rails', '~> 3.7'
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'coveralls', require: false
