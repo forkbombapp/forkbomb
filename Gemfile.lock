@@ -320,7 +320,7 @@ GEM
     tzinfo (0.3.53)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
-    vcr (3.0.3)
+    vcr (4.0.0)
     warden (1.2.7)
       rack (>= 1.0)
     webmock (3.0.1)
