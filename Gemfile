@@ -8,7 +8,7 @@ gem 'rails', '~> 4.0.2'
 gem 'dotenv-rails'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0.6'
+gem 'sass-rails', '~> 5.0.7'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 3.2.0'
