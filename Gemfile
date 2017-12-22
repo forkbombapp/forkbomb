@@ -48,7 +48,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'webmock'
   gem 'vcr'
-  gem 'rspec-rails', '~> 3.6'
+  gem 'rspec-rails', '~> 3.7'
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'coveralls', require: false
